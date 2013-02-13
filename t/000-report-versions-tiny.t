@@ -49,6 +49,7 @@ sub pmver {
 }
 
 eval { $v .= pmver('DBIx::Class::DeploymentHandler','any version') };
+eval { $v .= pmver('DBIx::Class::Schema::Config','any version') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.7.0') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
 eval { $v .= pmver('File::Find','any version') };

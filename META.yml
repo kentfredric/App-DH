@@ -23,6 +23,7 @@ provides:
     version: 0.001000
 requires:
   DBIx::Class::DeploymentHandler: 0
+  DBIx::Class::Schema::Config: 0
   Module::Runtime: 0
   Moose: 0
   MooseX::AttributeShortcuts: 0
@@ -38,6 +39,7 @@ version: 0.001000
 x_BuiltWith:
   modules:
     DBIx::Class::DeploymentHandler: 0.002204
+    DBIx::Class::Schema::Config: 0.001008
     Dist::Zilla::PluginBundle::Author::KENTNL: 1.7.0
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
     File::Find: 1.23
@@ -287,6 +289,14 @@ x_Dist_Zilla:
           phase: runtime
           type: requires
       name: Prereqs
+      version: 4.300030
+    -
+      class: Dist::Zilla::Plugin::Prereqs
+      config:
+        Dist::Zilla::Plugin::Prereqs:
+          phase: runtime
+          type: requires
+      name: recommend
       version: 4.300030
     -
       class: Dist::Zilla::Plugin::FinderCode

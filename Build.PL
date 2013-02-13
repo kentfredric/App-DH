@@ -28,6 +28,7 @@ my %module_build_args = (
   "recursive_test_files" => 1,
   "requires" => {
     "DBIx::Class::DeploymentHandler" => 0,
+    "DBIx::Class::Schema::Config" => 0,
     "Module::Runtime" => 0,
     "Moose" => 0,
     "MooseX::AttributeShortcuts" => 0,
