@@ -145,7 +145,7 @@ has include => (
   isa           => ArrayRef =>,
   default       => sub { [] },
   cmd_aliases   => I =>,
-  documentation => 'paths to load into @INC',
+  documentation => 'paths to load into INC',
 );
 
 =param --script_dir
@@ -191,7 +191,7 @@ has database => (
   isa           => ArrayRef =>,
   default       => sub { [qw( PostgreSQL SQLite )] },
   cmd_aliases   => d =>,
-  documentation => 'database backends to generate DDLs for. See SQL::Translator::Producer::* for valid values',
+  documentation => 'database backends to generate DDLs for. See SQL::Translator::Producer:: for valid values',
 );
 
 has _dh     => ( is => 'lazy' );
@@ -208,7 +208,7 @@ sub _build__schema {
 
 sub _build__dh {
   my ($self) = @_;
-  DBIx::Class::DeploymentHandler->new(
+  return DBIx::Class::DeploymentHandler->new(
     {
       schema           => $self->_schema,
       force_overwrite  => $self->force,
@@ -238,6 +238,7 @@ sub cmd_write_ddl {
       }
     );
   }
+  return;
 }
 
 =cmd write_ddl
@@ -251,6 +252,7 @@ Install to connection L</--connection_name>
 sub cmd_install {
   my $self = shift;
   $self->_dh->install;
+  return;
 }
 
 =cmd upgrade
@@ -261,7 +263,7 @@ Upgrade connection L</--connection_name>
 
 =cut
 
-sub cmd_upgrade { shift->_dh->upgrade }
+sub cmd_upgrade { shift->_dh->upgrade; return }
 
 my (%cmds) = (
   write_ddl => \&cmd_write_ddl,
@@ -278,6 +280,17 @@ my $list_cmds_opt = '(' . ( join q{|}, sort keys %cmds ) . ')';
 my $list_cmds_usage =
   ( join qq{\n}, q{}, qq{\tcommands:}, q{}, ( map { ( sprintf qq{\t%-30s%s}, $_, $cmd_desc{$_} ) } sort keys %cmds ), q{} );
 
+=begin Pod::Coverage
+
+    cmd_write_ddl
+    cmd_install
+    cmd_upgrade
+    run
+
+=end Pod::Coverage
+
+=cut
+
 around print_usage_text => sub {
   my ( $orig, $self, $usage ) = @_;
   my ($text) = $usage->text();
@@ -286,11 +299,8 @@ around print_usage_text => sub {
     } {
         $1 . ' ' . $list_cmds_opt
     }msex;
-  *STDERR->flush();
-  print "\n";
-  print $text;
-  print $list_cmds_usage;
-  print "\n";
+  $text .= qq{\n} . $text . $list_cmds_usage . qq{\n};
+  print $text or die q[Cannot write to STDOUT];
   exit 0;
 };
 
@@ -302,7 +312,7 @@ sub run {
   die "No such command ${cmd}\nCommands: $list_cmds\n"
     unless exists $cmds{$cmd};
   my $code = $cmds{$cmd};
-  $self->$code();
+  return $self->$code();
 }
 
 __PACKAGE__->meta->make_immutable;
