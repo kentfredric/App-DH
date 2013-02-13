@@ -205,19 +205,19 @@ Basic usage:
 
 Only generate ddls for deploy/upgrade
 
-    DBICDH [...params] write_ddl
+    dh.pl [...params] write_ddl
 
 =head2 write_ddl
 
 Install to connection L</--connection_name>
 
-    DBICDH [...params] install
+    dh.pl [...params] install
 
 =head2 upgrade
 
 Upgrade connection L</--connection_name>
 
-    DBICDH [...params] upgrade
+    dh.pl [...params] upgrade
 
 =head1 PARAMETERS
 

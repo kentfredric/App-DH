@@ -67,6 +67,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kentfredric/App-DH/issues"
+      },
+      "homepage" : "https://github.com/kentfredric/App-DH",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentfredric/App-DH.git",
+         "web" : "https://github.com/kentfredric/App-DH"
+      }
+   },
    "version" : "0.001000",
    "x_BuiltWith" : {
       "modules" : {
