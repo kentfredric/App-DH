@@ -3,7 +3,7 @@ use warnings;
 
 package App::DH;
 BEGIN {
-  $App::DH::AUTHORITY = 'cpan:KENTNL';
+  $App::DH::AUTHORITY = 'cpan:MSTROUT';
 }
 {
   $App::DH::VERSION = '0.001000';
@@ -14,6 +14,7 @@ BEGIN {
 use DBIx::Class::DeploymentHandler;
 use Moose;
 use MooseX::AttributeShortcuts;
+
 
 
 with 'MooseX::Getopt';
@@ -316,9 +317,23 @@ Can be specified multiple times.
 
 Default is C<[ PostgreSQL SQLite ]>
 
-=head1 AUTHOR
+=head1 CREDITS
 
-Kent Fredric <kentfredric@gmail.com>
+This module is mostly code by mst, and I've only tidied it up and made it more CPAN Friendly.
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>
+
+=item *
+
+mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

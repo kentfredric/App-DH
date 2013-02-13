@@ -1,7 +1,8 @@
 ---
 abstract: 'Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler'
 author:
-  - 'Kent Fredric <kentfredric@gmail.com>'
+  - 'kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>'
+  - 'mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>'
 build_requires:
   File::Find: 0
   File::Temp: 0
@@ -316,4 +317,4 @@ x_Dist_Zilla:
     config:
       is_trial: 0
     version: 4.300030
-x_authority: cpan:KENTNL
+x_authority: cpan:MSTROUT

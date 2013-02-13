@@ -1,7 +1,8 @@
 {
    "abstract" : "Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler",
    "author" : [
-      "Kent Fredric <kentfredric@gmail.com>"
+      "kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>",
+      "mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921",
@@ -435,6 +436,6 @@
          "version" : "4.300030"
       }
    },
-   "x_authority" : "cpan:KENTNL"
+   "x_authority" : "cpan:MSTROUT"
 }
 

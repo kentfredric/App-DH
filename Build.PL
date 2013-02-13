@@ -17,7 +17,8 @@ my %module_build_args = (
   },
   "dist_abstract" => "Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler",
   "dist_author" => [
-    "Kent Fredric <kentfredric\@gmail.com>"
+    "kentnl - Kent Fredric (cpan:KENTNL) <kentfredric\@gmail.com>",
+    "mst - Matt S. Trout (cpan:MSTROUT) <mst\@shadowcat.co.uk>"
   ],
   "dist_name" => "App-DH",
   "dist_version" => "0.001000",
