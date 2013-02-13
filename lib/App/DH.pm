@@ -6,7 +6,7 @@ BEGIN {
   $App::DH::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $App::DH::VERSION = '0.1.0';
+  $App::DH::VERSION = '0.001';
 }
 
 # ABSTRACT: Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler
@@ -20,171 +20,153 @@ with 'MooseX::Getopt';
 
 
 has connection_name => (
-    traits      => ['Getopt'],
-    is          => ro =>,
-    isa         => Str =>,
-    required    => 1,
-    cmd_aliases => c =>,
-    default     => sub { 'development' },
-    documentation =>
-'either a valid DBI DSN or an alias configured by DBIx::Class::Schema::Config',
+  traits        => ['Getopt'],
+  is            => ro =>,
+  isa           => Str =>,
+  required      => 1,
+  cmd_aliases   => c =>,
+  default       => sub { 'development' },
+  documentation => 'either a valid DBI DSN or an alias configured by DBIx::Class::Schema::Config',
 );
 
 
 has force => (
-    traits        => ['Getopt'],
-    is            => ro =>,
-    isa           => Bool =>,
-    default       => sub { 0 },
-    cmd_aliases   => f =>,
-    documentation => 'forcefully replace existing DDLs. [DANGER]',
+  traits        => ['Getopt'],
+  is            => ro =>,
+  isa           => Bool =>,
+  default       => sub { 0 },
+  cmd_aliases   => f =>,
+  documentation => 'forcefully replace existing DDLs. [DANGER]',
 );
 
 
 has schema => (
-    traits        => ['Getopt'],
-    is            => ro =>,
-    isa           => Str =>,
-    required      => 1,
-    cmd_aliases   => s =>,
-    documentation => 'the class name of the schema to generate DDLs/deploy for',
+  traits        => ['Getopt'],
+  is            => ro =>,
+  isa           => Str =>,
+  required      => 1,
+  cmd_aliases   => s =>,
+  documentation => 'the class name of the schema to generate DDLs/deploy for',
 );
 
 
 has include => (
-    traits        => ['Getopt'],
-    is            => ro =>,
-    isa           => ArrayRef =>,
-    default       => sub { [] },
-    cmd_aliases   => I =>,
-    documentation => 'paths to load into @INC',
+  traits        => ['Getopt'],
+  is            => ro =>,
+  isa           => ArrayRef =>,
+  default       => sub { [] },
+  cmd_aliases   => I =>,
+  documentation => 'paths to load into @INC',
 );
 
 
 has script_dir => (
-    traits        => ['Getopt'],
-    is            => ro =>,
-    isa           => Str =>,
-    default       => sub { 'share/ddl' },
-    cmd_aliases   => o =>,
-    documentation => 'output path',
+  traits        => ['Getopt'],
+  is            => ro =>,
+  isa           => Str =>,
+  default       => sub { 'share/ddl' },
+  cmd_aliases   => o =>,
+  documentation => 'output path',
 );
 
 
 has database => (
-    traits      => ['Getopt'],
-    is          => ro =>,
-    isa         => ArrayRef =>,
-    default     => sub { [qw( PostgreSQL SQLite )] },
-    cmd_aliases => d =>,
-    documentation =>
-'database backends to generate DDLs for. See SQL::Translator::Producer::* for valid values',
+  traits        => ['Getopt'],
+  is            => ro =>,
+  isa           => ArrayRef =>,
+  default       => sub { [qw( PostgreSQL SQLite )] },
+  cmd_aliases   => d =>,
+  documentation => 'database backends to generate DDLs for. See SQL::Translator::Producer::* for valid values',
 );
 
 has _dh     => ( is => 'lazy' );
 has _schema => ( is => 'lazy' );
 
 sub _build__schema {
-    my ($self) = @_;
-    require lib;
-    lib->import($_) for @{ $self->include };
-    require Module::Runtime;
-    my $class = Module::Runtime::use_module( $self->schema );
-    return $class->connect( $self->connection_name );
+  my ($self) = @_;
+  require lib;
+  lib->import($_) for @{ $self->include };
+  require Module::Runtime;
+  my $class = Module::Runtime::use_module( $self->schema );
+  return $class->connect( $self->connection_name );
 }
 
 sub _build__dh {
-    my ($self) = @_;
-    DBIx::Class::DeploymentHandler->new(
-        {
-            schema           => $self->_schema,
-            force_overwrite  => $self->force,
-            script_directory => $self->script_dir,
-            databases        => $self->database,
-        }
-    );
+  my ($self) = @_;
+  DBIx::Class::DeploymentHandler->new(
+    {
+      schema           => $self->_schema,
+      force_overwrite  => $self->force,
+      script_directory => $self->script_dir,
+      databases        => $self->database,
+    }
+  );
 }
 
 
 sub cmd_write_ddl {
-    my ($self) = @_;
-    $self->_dh->prepare_install;
-    my $v = $self->_dh->schema_version;
-    if ( $v > 1 ) {
-        $self->_dh->prepare_upgrade(
-            {
-                from_version => $v - 1,
-                to_version   => $v
-            }
-        );
-    }
+  my ($self) = @_;
+  $self->_dh->prepare_install;
+  my $v = $self->_dh->schema_version;
+  if ( $v > 1 ) {
+    $self->_dh->prepare_upgrade(
+      {
+        from_version => $v - 1,
+        to_version   => $v
+      }
+    );
+  }
 }
 
 
 sub cmd_install {
-    my $self = shift;
-    $self->_dh->install;
+  my $self = shift;
+  $self->_dh->install;
 }
 
 
 sub cmd_upgrade { shift->_dh->upgrade }
 
 my (%cmds) = (
-    write_ddl => \&cmd_write_ddl,
-    install   => \&cmd_install,
-    upgrade   => \&cmd_upgrade,
+  write_ddl => \&cmd_write_ddl,
+  install   => \&cmd_install,
+  upgrade   => \&cmd_upgrade,
 );
 my (%cmd_desc) = (
-    write_ddl => 'only write ddl files',
-    install   => 'install to the specified database connection',
-    upgrade   => 'upgrade the specified database connection',
+  write_ddl => 'only write ddl files',
+  install   => 'install to the specified database connection',
+  upgrade   => 'upgrade the specified database connection',
 );
 my $list_cmds = join q[ ], sort keys %cmds;
 my $list_cmds_opt = '(' . ( join q{|}, sort keys %cmds ) . ')';
-my $list_cmds_usage = ( join qq{\n},
-    q{},
-    qq{\tcommands:},
-    q{},
-    ( map { 
-        ( sprintf qq{\t%-30s%s}, $_, $cmd_desc{$_} )
-    } sort keys %cmds ),
-    q{} );
+my $list_cmds_usage =
+  ( join qq{\n}, q{}, qq{\tcommands:}, q{}, ( map { ( sprintf qq{\t%-30s%s}, $_, $cmd_desc{$_} ) } sort keys %cmds ), q{} );
 
-around _getopt_get_options => sub { 
-    my ( $orig, $self, @args ) = @_;
-    my $result = $self->$orig( @args );
-    $result =~ s{
+around print_usage_text => sub {
+  my ( $orig, $self, $usage ) = @_;
+  my ($text) = $usage->text();
+  $text =~ s{
         ( long\s+options[.]+[]] )
     } {
         $1 . ' ' . $list_cmds_opt
     }msex;
-    return "\n" . $result . $list_cmds_usage . "\n";
+  *STDERR->flush();
+  print "\n";
+  print $text;
+  print $list_cmds_usage;
+  print "\n";
+  exit 0;
 };
 
-#around print_usage_text => sub {
-#    my ( $orig, $self, $usage ) = @_;
-#    my ( $text ) = $usage->text();
-#    $text =~ s{
-#        ( long\s+options[.]+[]] )
-#    } {
-#        $1 . ' ' . $list_cmds_opt
-#    }msex;
-#    *STDERR->flush();
-#    print "\n";
-#    print $text;
-#    print $list_cmds_usage;
-#    print "\n";
-#};
-
 sub run {
-    my ($self) = @_;
-    my ( $cmd, @what ) = @{ $self->extra_argv };
-    die "Must supply a command\nCommands: $list_cmds\n" unless $cmd;
-    die "Extra argv detected - command only please\n" if @what;
-    die "No such command ${cmd}\nCommands: $list_cmds\n"
-      unless exists $cmds{$cmd};
-    my $code = $cmds{$cmd};
-    $self->$code();
+  my ($self) = @_;
+  my ( $cmd, @what ) = @{ $self->extra_argv };
+  die "Must supply a command\nCommands: $list_cmds\n" unless $cmd;
+  die "Extra argv detected - command only please\n" if @what;
+  die "No such command ${cmd}\nCommands: $list_cmds\n"
+    unless exists $cmds{$cmd};
+  my $code = $cmds{$cmd};
+  $self->$code();
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -204,7 +186,7 @@ App::DH - Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::Deploy
 
 =head1 VERSION
 
-version 0.1.0
+version 0.001
 
 =head1 SYNOPSIS
 

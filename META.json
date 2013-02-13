@@ -47,7 +47,7 @@
             "Moose" : "0",
             "MooseX::AttributeShortcuts" : "0",
             "MooseX::Getopt" : "0",
-            "perl" : "v5.10.0",
+            "perl" : "5.006",
             "strict" : "0",
             "warnings" : "0"
          }
@@ -63,11 +63,11 @@
    "provides" : {
       "App::DH" : {
          "file" : "lib/App/DH.pm",
-         "version" : "v0.1.0"
+         "version" : "0.001"
       }
    },
    "release_status" : "stable",
-   "version" : "0.1.0",
+   "version" : "0.001",
    "x_BuiltWith" : {
       "modules" : {
          "DBIx::Class::DeploymentHandler" : "0.002204",
