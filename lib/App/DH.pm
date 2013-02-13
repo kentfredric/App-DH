@@ -77,7 +77,7 @@ has database => (
   isa           => ArrayRef =>,
   default       => sub { [qw( PostgreSQL SQLite )] },
   cmd_aliases   => d =>,
-  documentation => 'database backends to generate DDLs for. See SQL::Translator::Producer::* for valid values',
+  documentation => 'database backends to generate DDLs for. See SQL::Translator::Producer:: for valid values',
 );
 
 has _dh     => ( is => 'lazy' );
@@ -94,7 +94,7 @@ sub _build__schema {
 
 sub _build__dh {
   my ($self) = @_;
-  DBIx::Class::DeploymentHandler->new(
+  return DBIx::Class::DeploymentHandler->new(
     {
       schema           => $self->_schema,
       force_overwrite  => $self->force,
@@ -117,16 +117,18 @@ sub cmd_write_ddl {
       }
     );
   }
+  return;
 }
 
 
 sub cmd_install {
   my $self = shift;
   $self->_dh->install;
+  return;
 }
 
 
-sub cmd_upgrade { shift->_dh->upgrade }
+sub cmd_upgrade { shift->_dh->upgrade ; return }
 
 my (%cmds) = (
   write_ddl => \&cmd_write_ddl,
@@ -151,11 +153,8 @@ around print_usage_text => sub {
     } {
         $1 . ' ' . $list_cmds_opt
     }msex;
-  *STDERR->flush();
-  print "\n";
-  print $text;
-  print $list_cmds_usage;
-  print "\n";
+  $text .= qq{\n} . $text . $list_cmds_usage qq{\n};
+  print $text or die "Cannot write to STDOUT";
   exit 0;
 };
 
@@ -167,7 +166,7 @@ sub run {
   die "No such command ${cmd}\nCommands: $list_cmds\n"
     unless exists $cmds{$cmd};
   my $code = $cmds{$cmd};
-  $self->$code();
+  return $self->$code();
 }
 
 __PACKAGE__->meta->make_immutable;
