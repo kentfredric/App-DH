@@ -24,11 +24,12 @@ my %module_build_args = (
   "dist_version" => "0.001000",
   "license" => "perl",
   "module_name" => "App::DH",
-  "recommends" => {},
+  "recommends" => {
+    "DBIx::Class::Schema::Config" => 0
+  },
   "recursive_test_files" => 1,
   "requires" => {
     "DBIx::Class::DeploymentHandler" => 0,
-    "DBIx::Class::Schema::Config" => 0,
     "Module::Runtime" => 0,
     "Moose" => 0,
     "MooseX::AttributeShortcuts" => 0,

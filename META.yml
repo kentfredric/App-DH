@@ -21,9 +21,10 @@ provides:
   App::DH:
     file: lib/App/DH.pm
     version: 0.001000
+recommends:
+  DBIx::Class::Schema::Config: 0
 requires:
   DBIx::Class::DeploymentHandler: 0
-  DBIx::Class::Schema::Config: 0
   Module::Runtime: 0
   Moose: 0
   MooseX::AttributeShortcuts: 0
@@ -295,7 +296,7 @@ x_Dist_Zilla:
       config:
         Dist::Zilla::Plugin::Prereqs:
           phase: runtime
-          type: requires
+          type: recommends
       name: recommend
       version: 4.300030
     -
