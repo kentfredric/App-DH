@@ -180,7 +180,7 @@ sub _build__dh {
 
 Only generate ddls for deploy/upgrade
 
-    DBICDH [...params] write_ddl
+    dh.pl [...params] write_ddl
 
 =cut
 
@@ -202,7 +202,7 @@ sub cmd_write_ddl {
 
 Install to connection L</--connection_name>
 
-    DBICDH [...params] install
+    dh.pl [...params] install
 
 =cut
 
@@ -215,7 +215,7 @@ sub cmd_install {
 
 Upgrade connection L</--connection_name>
 
-    DBICDH [...params] upgrade
+    dh.pl [...params] upgrade
 
 =cut
 
