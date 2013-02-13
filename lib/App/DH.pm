@@ -199,6 +199,20 @@ Basic usage:
     use App::DH;
     App::DH->new_with_options->run;
 
+If you don't like any of the defaults, you can subclass to override
+
+    use App::DH;
+    {
+        package MyApp;
+        use  Moose;
+        extends 'App::DH';
+
+        has '+connection_name' => ( default => sub { 'production' } );
+        has '+schema'          => ( default => sub { 'MyApp::Schema' } );
+        __PACKAGE__->meta->make_immutable;
+    }
+    MyApp->new_with_options->run;
+
 =head1 COMMANDS
 
 =head2 write_ddl
@@ -278,7 +292,7 @@ Specify the C<SQL::Translator::Producer::*> backend to use for generating DDLs.
     -dSQLite
     --database PostgreSQL
 
-Can be specified multiple times. 
+Can be specified multiple times.
 
 Default is C<[ PostgreSQL SQLite ]>
 

@@ -8,6 +8,7 @@ META.yml
 README
 dist.ini
 example/dh.pl
+example/subclass.pl
 lib/App/DH.pm
 perlcritic.rc
 t/00-compile.t
