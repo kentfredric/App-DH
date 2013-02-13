@@ -20,6 +20,21 @@ Basic usage:
     use App::DH;
     App::DH->new_with_options->run;
 
+If you don't like any of the defaults, you can subclass to override
+
+    use App::DH;
+    {
+        package MyApp;
+        use  Moose;
+        extends 'App::DH';
+
+        has '+connection_name' => ( default => sub { 'production' } );
+        has '+schema'          => ( default => sub { 'MyApp::Schema' } );
+        __PACKAGE__->meta->make_immutable;
+    }
+    MyApp->new_with_options->run;
+
+
 =cut
 
 with 'MooseX::Getopt';
@@ -27,7 +42,7 @@ with 'MooseX::Getopt';
 =param --connection_name
 
     -c/--connection_name
-    
+
 Specify the connection details to use for deployment.
 Can be a name of a configuration in a C<DBIx::Class::Schema::Config> configuration if the L</--schema> uses it.
 
@@ -137,7 +152,7 @@ Specify the C<SQL::Translator::Producer::*> backend to use for generating DDLs.
     -dSQLite
     --database PostgreSQL
 
-Can be specified multiple times. 
+Can be specified multiple times.
 
 Default is C<[ PostgreSQL SQLite ]>
 
