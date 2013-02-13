@@ -6,7 +6,7 @@ BEGIN {
   $App::DH::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $App::DH::VERSION = '0.001';
+  $App::DH::VERSION = '0.001000';
 }
 
 # ABSTRACT: Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler
@@ -186,7 +186,7 @@ App::DH - Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::Deploy
 
 =head1 VERSION
 
-version 0.001
+version 0.001000
 
 =head1 SYNOPSIS
 

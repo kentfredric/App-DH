@@ -63,11 +63,11 @@
    "provides" : {
       "App::DH" : {
          "file" : "lib/App/DH.pm",
-         "version" : "0.001"
+         "version" : "0.001000"
       }
    },
    "release_status" : "stable",
-   "version" : "0.001",
+   "version" : "0.001000",
    "x_BuiltWith" : {
       "modules" : {
          "DBIx::Class::DeploymentHandler" : "0.002204",
