@@ -58,6 +58,12 @@ If you don't like any of the defaults, you can subclass to override
 
 =cut
 
+=head1 CREDITS
+
+This module is mostly code by mst, and I've only tidied it up and made it more CPAN Friendly.
+
+=cut
+
 with 'MooseX::Getopt';
 
 =param --connection_name

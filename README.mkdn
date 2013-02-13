@@ -134,9 +134,14 @@ Can be specified multiple times.
 
 Default is `[ PostgreSQL SQLite ]`
 
-# AUTHOR
+# CREDITS
 
-Kent Fredric <kentfredric@gmail.com>
+This module is mostly code by mst, and I've only tidied it up and made it more CPAN Friendly.
+
+# AUTHORS
+
+- kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>
+- mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>
 
 # COPYRIGHT AND LICENSE
 
