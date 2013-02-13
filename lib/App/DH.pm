@@ -145,6 +145,8 @@ my $list_cmds_opt = '(' . ( join q{|}, sort keys %cmds ) . ')';
 my $list_cmds_usage =
   ( join qq{\n}, q{}, qq{\tcommands:}, q{}, ( map { ( sprintf qq{\t%-30s%s}, $_, $cmd_desc{$_} ) } sort keys %cmds ), q{} );
 
+
+
 around print_usage_text => sub {
   my ( $orig, $self, $usage ) = @_;
   my ($text) = $usage->text();
@@ -319,6 +321,10 @@ Default is C<[ PostgreSQL SQLite ]>
 =head1 CREDITS
 
 This module is mostly code by mst, and I've only tidied it up and made it more CPAN Friendly.
+
+=for Pod::Coverage     cmd_write_ddl
+    cmd_install
+    cmd_upgrade
 
 =head1 AUTHORS
 
