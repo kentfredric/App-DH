@@ -18,17 +18,18 @@ Basic usage:
     App::DH->new_with_options->run;
 
 \--
-	usage: dh.pl \[-?cdfhIos\] \[long options...\] (install|upgrade|write\_ddl)
+
+	usage: dh.pl [-?cdfhIos] [long options...] (install|upgrade|write_ddl)
 		-h -? --usage --help     Prints this usage information.
-		-c --connection\_name     either a valid DBI DSN or an alias
+		-c --connection_name     either a valid DBI DSN or an alias
 		                         configured by DBIx::Class::Schema::Config
-		-f --force               forcefully replace existing DDLs. \[DANGER\]
+		-f --force               forcefully replace existing DDLs. [DANGER]
 		-s --schema              the class name of the schema to generate
 		                         DDLs/deploy for
 		-I --include             paths to load into @INC
-		-o --script\_dir          output path
+		-o --script_dir          output path
 		-d --database            database backends to generate DDLs for. See
-		                         SQL::Translator::Producer::\* for valid values
+		                         SQL::Translator::Producer::* for valid values
 
 		commands:
 

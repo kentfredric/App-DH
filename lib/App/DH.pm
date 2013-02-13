@@ -21,6 +21,7 @@ Basic usage:
     App::DH->new_with_options->run;
 
 --
+
 	usage: dh.pl [-?cdfhIos] [long options...] (install|upgrade|write_ddl)
 		-h -? --usage --help     Prints this usage information.
 		-c --connection_name     either a valid DBI DSN or an alias
