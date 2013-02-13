@@ -154,7 +154,7 @@ around print_usage_text => sub {
         $1 . ' ' . $list_cmds_opt
     }msex;
   $text .= qq{\n} . $text . $list_cmds_usage . qq{\n};
-  print $text or die "Cannot write to STDOUT";
+  print $text or die q[Cannot write to STDOUT];
   exit 0;
 };
 
