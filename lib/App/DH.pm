@@ -128,7 +128,7 @@ sub cmd_install {
 }
 
 
-sub cmd_upgrade { shift->_dh->upgrade ; return }
+sub cmd_upgrade { shift->_dh->upgrade; return }
 
 my (%cmds) = (
   write_ddl => \&cmd_write_ddl,
@@ -144,7 +144,6 @@ my $list_cmds = join q[ ], sort keys %cmds;
 my $list_cmds_opt = '(' . ( join q{|}, sort keys %cmds ) . ')';
 my $list_cmds_usage =
   ( join qq{\n}, q{}, qq{\tcommands:}, q{}, ( map { ( sprintf qq{\t%-30s%s}, $_, $cmd_desc{$_} ) } sort keys %cmds ), q{} );
-
 
 
 around print_usage_text => sub {
