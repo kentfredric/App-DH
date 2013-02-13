@@ -325,6 +325,7 @@ This module is mostly code by mst, and I've only tidied it up and made it more C
 =for Pod::Coverage     cmd_write_ddl
     cmd_install
     cmd_upgrade
+    run
 
 =head1 AUTHORS
 
