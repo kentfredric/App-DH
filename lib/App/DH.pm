@@ -57,7 +57,7 @@ has include => (
   isa           => ArrayRef =>,
   default       => sub { [] },
   cmd_aliases   => I =>,
-  documentation => 'paths to load into @INC',
+  documentation => 'paths to load into INC',
 );
 
 
