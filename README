@@ -15,6 +15,21 @@ SYNOPSIS
         use App::DH;
         App::DH->new_with_options->run;
 
+    -- usage: dh.pl [-?cdfhIos] [long options...]
+    (install|upgrade|write_ddl) -h -? --usage --help Prints this usage
+    information. -c --connection_name either a valid DBI DSN or an alias
+    configured by DBIx::Class::Schema::Config -f --force forcefully replace
+    existing DDLs. [DANGER] -s --schema the class name of the schema to
+    generate DDLs/deploy for -I --include paths to load into @INC -o
+    --script_dir output path -d --database database backends to generate
+    DDLs for. See SQL::Translator::Producer::* for valid values
+
+                    commands:
+
+                    install                       install to the specified database connection
+                    upgrade                       upgrade the specified database connection
+                    write_ddl                     only write ddl files
+
     If you don't like any of the defaults, you can subclass to override
 
         use App::DH;
