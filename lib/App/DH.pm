@@ -60,7 +60,11 @@ If you don't like any of the defaults, you can subclass to override
 
 =head1 CREDITS
 
-This module is mostly code by mst, and I've only tidied it up and made it more CPAN Friendly.
+This module is mostly code by mst, sponsored by L<nordaaker.com|http://nordaaker.com>, and I've only tidied it up and made it more CPAN Friendly.
+
+=head1 SPONSORS
+
+The authoring of the initial incarnation of this code is kindly sponsored by L<nordaaker.com|http://nordaaker.com>.
 
 =cut
 
