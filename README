@@ -121,7 +121,7 @@ PARAMETERS
 
     Can be specified multiple times.
 
-    Default is introspected from looking at whatever --connection_name
+    Default is introspected from looking at whatever "--connection_name"
     connects to.
 
 CREDITS

@@ -333,7 +333,7 @@ Specify the C<SQL::Translator::Producer::*> backend to use for generating DDLs.
 
 Can be specified multiple times.
 
-Default is introspected from looking at whatever L<--connection_name> connects to.
+Default is introspected from looking at whatever L</--connection_name> connects to.
 
 =head1 CREDITS
 
