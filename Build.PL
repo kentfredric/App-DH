@@ -21,7 +21,7 @@ my %module_build_args = (
     "mst - Matt S. Trout (cpan:MSTROUT) <mst\@shadowcat.co.uk>"
   ],
   "dist_name" => "App-DH",
-  "dist_version" => "0.1.0",
+  "dist_version" => "0.001000",
   "license" => "perl",
   "module_name" => "App::DH",
   "recommends" => {
@@ -34,7 +34,7 @@ my %module_build_args = (
     "Moose" => 0,
     "MooseX::AttributeShortcuts" => 0,
     "MooseX::Getopt" => 0,
-    "perl" => "v5.10.0",
+    "perl" => "5.006",
     "strict" => 0,
     "warnings" => 0
   },

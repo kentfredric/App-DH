@@ -3,7 +3,7 @@ NAME
     DBIx::Class::DeploymentHandler
 
 VERSION
-    version 0.1.0
+    version 0.001000
 
 SYNOPSIS
     Basic usage:
