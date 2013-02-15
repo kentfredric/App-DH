@@ -319,7 +319,7 @@ Default is C<[ PostgreSQL SQLite ]>
 
 =head1 CREDITS
 
-This module is mostly code by mst, sponsored by L<nordaaker.com>, and I've only tidied it up and made it more CPAN Friendly.
+This module is mostly code by mst, sponsored by L<nordaaker.com|http://nordaaker.com>, and I've only tidied it up and made it more CPAN Friendly.
 
 =head1 SPONSORS
 
@@ -346,7 +346,7 @@ mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by The App::DH Authors, Contributors, and Sponsors..
+This software is copyright (c) 2013 by The App::DH Authors, Contributors, and Sponsors.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
