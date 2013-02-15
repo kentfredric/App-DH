@@ -21,7 +21,7 @@ my %module_build_args = (
     "mst - Matt S. Trout (cpan:MSTROUT) <mst\@shadowcat.co.uk>"
   ],
   "dist_name" => "App-DH",
-  "dist_version" => "0.001000",
+  "dist_version" => "0.001001",
   "license" => "perl",
   "module_name" => "App::DH",
   "recommends" => {

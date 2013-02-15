@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "App::DH 3"
-.TH App::DH 3 "2013-02-15" "perl v5.17.9" "User Contributed Perl Documentation"
+.TH App::DH 3 "2013-02-16" "perl v5.17.9" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -142,7 +142,7 @@
 App::DH \- Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler
 .SH "VERSION"
 .IX Header "VERSION"
-version 0.001000
+version 0.001001
 .SH "SYNOPSIS"
 .IX Header "SYNOPSIS"
 Basic usage:
@@ -294,7 +294,7 @@ Specify the \f(CW\*(C`SQL::Translator::Producer::*\*(C'\fR backend to use for ge
 .PP
 Can be specified multiple times.
 .PP
-Default is \f(CW\*(C`[ PostgreSQL SQLite ]\*(C'\fR
+Default is introspected from looking at whatever \*(L"\-\-connection_name\*(R" connects to.
 .SH "CREDITS"
 .IX Header "CREDITS"
 This module is mostly code by mst, sponsored by nordaaker.com <http://nordaaker.com>, and I've only tidied it up and made it more \s-1CPAN\s0 Friendly.

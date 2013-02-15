@@ -3,7 +3,7 @@ NAME
     DBIx::Class::DeploymentHandler
 
 VERSION
-    version 0.001000
+    version 0.001001
 
 SYNOPSIS
     Basic usage:
@@ -121,7 +121,8 @@ PARAMETERS
 
     Can be specified multiple times.
 
-    Default is "[ PostgreSQL SQLite ]"
+    Default is introspected from looking at whatever "--connection_name"
+    connects to.
 
 CREDITS
     This module is mostly code by mst, sponsored by nordaaker.com

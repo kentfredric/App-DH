@@ -1,21 +1,21 @@
 do{ my $x = {
-       'build_requires' => {
-                             'Module::Build' => '0.4003',
-                             'Test::More' => '0.98',
-                             'File::Temp' => 0,
-                             'File::Find' => 0
-                           },
        'recommends' => {
                          'DBIx::Class::Schema::Config' => 0
                        },
+       'build_requires' => {
+                             'Test::More' => '0.98',
+                             'File::Find' => 0,
+                             'File::Temp' => 0,
+                             'Module::Build' => '0.4003'
+                           },
        'conflicts' => {},
        'requires' => {
-                       'perl' => '5.006',
-                       'MooseX::AttributeShortcuts' => 0,
                        'Module::Runtime' => 0,
-                       'Moose' => 0,
                        'strict' => 0,
+                       'MooseX::AttributeShortcuts' => 0,
                        'warnings' => 0,
+                       'perl' => '5.006',
+                       'Moose' => 0,
                        'DBIx::Class::DeploymentHandler' => 0,
                        'MooseX::Getopt' => 0
                      }
