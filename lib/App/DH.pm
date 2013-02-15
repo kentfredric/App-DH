@@ -323,7 +323,7 @@ This module is mostly code by mst, sponsored by L<nordaaker.com>, and I've only 
 
 =head1 SPONSORS
 
-The authoring of the Initial Incarnation of this code is kindly sponsored by L<nordaaker.com>.
+The authoring of the Initial Incarnation of this code is kindly sponsored by L<nordaaker.com|http://nordaaker.com>.
 
 =for Pod::Coverage     cmd_write_ddl
     cmd_install
