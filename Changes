@@ -1,6 +1,6 @@
 Release history for App-DH
 
-0.001001 2013-02-15T16:04:31Z
+0.001001 2013-02-15T16:05:46Z
  - default databases are now chosen by introspecting your --connection. But
    you can still override the default on the commandline.
 
