@@ -1,0 +1,146 @@
+NAME
+    App::DH - Deploy your DBIx::Class Schema to DDL/Database via
+    DBIx::Class::DeploymentHandler
+
+VERSION
+    version 0.001000
+
+SYNOPSIS
+    Basic usage:
+
+        #!/usr/bin/env perl
+        #
+        # dh.pl
+
+        use App::DH;
+        App::DH->new_with_options->run;
+
+    --
+
+            usage: dh.pl [-?cdfhIos] [long options...] (install|upgrade|write_ddl)
+                    -h -? --usage --help     Prints this usage information.
+                    -c --connection_name     either a valid DBI DSN or an alias
+                                             configured by DBIx::Class::Schema::Config
+                    -f --force               forcefully replace existing DDLs. [DANGER]
+                    -s --schema              the class name of the schema to generate
+                                             DDLs/deploy for
+                    -I --include             paths to load into @INC
+                    -o --script_dir          output path
+                    -d --database            database backends to generate DDLs for. See
+                                             SQL::Translator::Producer::* for valid values
+
+                    commands:
+
+                    install                       install to the specified database connection
+                    upgrade                       upgrade the specified database connection
+                    write_ddl                     only write ddl files
+
+    If you don't like any of the defaults, you can subclass to override
+
+        use App::DH;
+        {
+            package MyApp;
+            use  Moose;
+            extends 'App::DH';
+
+            has '+connection_name' => ( default => sub { 'production' } );
+            has '+schema'          => ( default => sub { 'MyApp::Schema' } );
+            __PACKAGE__->meta->make_immutable;
+        }
+        MyApp->new_with_options->run;
+
+COMMANDS
+  write_ddl
+    Only generate ddls for deploy/upgrade
+
+        dh.pl [...params] write_ddl
+
+  write_ddl
+    Install to connection "--connection_name"
+
+        dh.pl [...params] install
+
+  upgrade
+    Upgrade connection "--connection_name"
+
+        dh.pl [...params] upgrade
+
+PARAMETERS
+  --connection_name
+        -c/--connection_name
+
+    Specify the connection details to use for deployment. Can be a name of a
+    configuration in a "DBIx::Class::Schema::Config" configuration if the
+    "--schema" uses it.
+
+        --connection_name 'dbi:SQLite:/path/to/db'
+
+        -cdevelopment
+
+  --force
+    Overwrite existing DDL files of the same version.
+
+        -f/--force
+
+  --schema
+        -s/--schema
+
+    The class name of the schema to load for DDL/Deployment
+
+        -sMyProject::Schema
+        --schema MyProject::Schema
+
+  --include
+        -I/--include
+
+    Add a given library path to @INC prior to loading "schema"
+
+        -I../lib
+        --include ../lib
+
+    May be specified multiple times.
+
+  --script_dir
+        -o/--script_dir
+
+    Specify where to write the per-backend DDL's.
+
+    Default is ./share/ddl
+
+        -o/tmp/ddl
+        --script_dir /tmp/ddl
+
+  --database
+        -d/--database
+
+    Specify the "SQL::Translator::Producer::*" backend to use for generating
+    DDLs.
+
+        -dSQLite
+        --database PostgreSQL
+
+    Can be specified multiple times.
+
+    Default is "[ PostgreSQL SQLite ]"
+
+CREDITS
+    This module is mostly code by mst, sponsored by nordaaker.com
+    <http://nordaaker.com>, and I've only tidied it up and made it more CPAN
+    Friendly.
+
+SPONSORS
+    The authoring of the initial incarnation of this code is kindly
+    sponsored by nordaaker.com <http://nordaaker.com>.
+
+AUTHORS
+    *   kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>
+
+    *   mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2013 by The App::DH Authors,
+    Contributors, and Sponsors.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+

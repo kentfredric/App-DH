@@ -1,0 +1,135 @@
+do{ my $x = [
+       {
+         'ARGV' => []
+       },
+       {},
+       {
+         'prefix' => undef,
+         'install_base' => undef,
+         'extra_compiler_flags' => [],
+         'install_sets' => {},
+         'script_files' => [],
+         'cpan_client' => 'cpan',
+         'prefix_relpaths' => {},
+         'requires' => {
+                         'perl' => '5.006',
+                         'MooseX::AttributeShortcuts' => 0,
+                         'Module::Runtime' => 0,
+                         'Moose' => 0,
+                         'strict' => 0,
+                         'warnings' => 0,
+                         'DBIx::Class::DeploymentHandler' => 0,
+                         'MooseX::Getopt' => 0
+                       },
+         'pm_files' => undef,
+         'debug' => undef,
+         'config_dir' => '_build',
+         'libdoc_dirs' => [
+                            'blib/lib',
+                            'blib/arch'
+                          ],
+         'create_makefile_pl' => undef,
+         'pollute' => undef,
+         'dist_author' => [
+                            'kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>',
+                            'mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>'
+                          ],
+         'get_options' => {},
+         'build_bat' => 0,
+         'dist_abstract' => 'Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler',
+         'metafile2' => 'META.json',
+         'recursive_test_files' => 1,
+         'orig_dir' => '/home/kent/perl/App-DH/App-DH-0.001000',
+         'create_license' => undef,
+         'metafile' => 'META.yml',
+         'needs_compiler' => '',
+         'base_dir' => '/home/kent/perl/App-DH/App-DH-0.001000',
+         'install_path' => {},
+         'program_name' => undef,
+         'pod_files' => undef,
+         'configure_requires' => {
+                                   'Module::Build' => '0.4003'
+                                 },
+         'destdir' => undef,
+         'build_requires' => {
+                               'Module::Build' => '0.4003',
+                               'Test::More' => '0.98',
+                               'File::Temp' => 0,
+                               'File::Find' => 0
+                             },
+         'scripts' => undef,
+         'create_packlist' => 1,
+         'blib' => 'blib',
+         'extra_linker_flags' => [],
+         'use_rcfile' => 1,
+         'build_script' => 'Build',
+         'build_class' => 'Module::Build',
+         'bundle_inc' => [],
+         'allow_mb_mismatch' => 0,
+         'installdirs' => 'site',
+         'html_css' => '',
+         'recurse_into' => [],
+         'license' => 'perl',
+         'include_dirs' => [],
+         'release_status' => 'stable',
+         'use_tap_harness' => 0,
+         'autosplit' => undef,
+         'meta_add' => {},
+         'dist_suffix' => undef,
+         'sign' => undef,
+         'install_base_relpaths' => {},
+         'quiet' => undef,
+         'build_elements' => [
+                               'PL',
+                               'support',
+                               'pm',
+                               'xs',
+                               'share_dir',
+                               'pod',
+                               'script'
+                             ],
+         'has_config_data' => undef,
+         'share_dir' => undef,
+         'bindoc_dirs' => [
+                            'blib/script'
+                          ],
+         'recommends' => {
+                           'DBIx::Class::Schema::Config' => 0
+                         },
+         'conflicts' => {},
+         'dist_name' => 'App-DH',
+         'PL_files' => undef,
+         'dist_version_from' => undef,
+         'xs_files' => undef,
+         'tap_harness_args' => {},
+         'auto_configure_requires' => 1,
+         'meta_merge' => {},
+         'dist_version' => '0.001000',
+         'dynamic_config' => 1,
+         'create_readme' => undef,
+         'mb_version' => '0.4003',
+         'test_file_exts' => [
+                               '.t'
+                             ],
+         'bundle_inc_preload' => [],
+         'original_prefix' => {},
+         'debugger' => undef,
+         'perl' => '/home/kent/perl5/perlbrew/perls/perl-blead/bin/perl5.17.9',
+         'prereq_action_types' => [
+                                    'requires',
+                                    'build_requires',
+                                    'conflicts',
+                                    'recommends'
+                                  ],
+         'c_source' => undef,
+         'verbose' => undef,
+         'test_files' => undef,
+         'config' => undef,
+         'mymetafile2' => 'MYMETA.json',
+         'module_name' => 'App::DH',
+         'mymetafile' => 'MYMETA.yml',
+         '_added_to_INC' => [],
+         'magic_number' => undef
+       }
+     ];
+$x; }
