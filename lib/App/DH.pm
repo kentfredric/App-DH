@@ -185,15 +185,14 @@ Specify the C<SQL::Translator::Producer::*> backend to use for generating DDLs.
 
 Can be specified multiple times.
 
-Default is C<[ PostgreSQL SQLite ]>
+Default is introspected from looking at whatever L</--connection_name> connects to.
 
 =cut
 
 has database => (
   traits        => ['Getopt'],
-  is            => ro =>,
+  is            => lazy =>,
   isa           => ArrayRef =>,
-  default       => sub { [qw( PostgreSQL SQLite )] },
   cmd_aliases   => d =>,
   documentation => 'database backends to generate DDLs for. See SQL::Translator::Producer:: for valid values',
 );
@@ -220,6 +219,25 @@ sub _build__dh {
       databases        => $self->database,
     }
   );
+}
+
+sub _build_database {
+  my ($self) = @_;
+  my $type = $self->_schema->storage->sqlt_type;
+
+  # Note: This seemingly needless stringification
+  # exists to solve an incredibly complex problem on bleadperl
+  # with COW, and for some reason, the string sqlt_type
+  # returns as the flag 'IsCOW',
+  # which for some reason causes a warning when the invoking
+  # perl interpreter terminates.
+  #
+  # If you can solve the bug in bleadperl, I'll
+  # gladly remove the forced stringification of the COW string.
+  #
+  # -- kentnl @ Feb 16/2013
+  # -- perl (v5.17.9 (v5.17.8-156-g012528a))
+  return ["$type"];
 }
 
 =cmd write_ddl
