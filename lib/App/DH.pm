@@ -319,7 +319,11 @@ Default is C<[ PostgreSQL SQLite ]>
 
 =head1 CREDITS
 
-This module is mostly code by mst, and I've only tidied it up and made it more CPAN Friendly.
+This module is mostly code by mst, sponsored by L<nordaaker.com>, and I've only tidied it up and made it more CPAN Friendly.
+
+=head1 SPONSORS
+
+The authoring of the Initial Incarnation of this code is kindly sponsored by L<nordaaker.com>.
 
 =for Pod::Coverage     cmd_write_ddl
     cmd_install
@@ -342,7 +346,7 @@ mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2013 by The App::DH Authors, Contributors, and Sponsors..
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
