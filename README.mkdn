@@ -4,7 +4,7 @@ App::DH - Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::Deploy
 
 # VERSION
 
-version 0.001000
+version 0.001001
 
 # SYNOPSIS
 
@@ -132,7 +132,7 @@ Specify the `SQL::Translator::Producer::*` backend to use for generating DDLs.
 
 Can be specified multiple times.
 
-Default is `[ PostgreSQL SQLite ]`
+Default is introspected from looking at whatever ["--connection\_name"](#--connection\_name) connects to.
 
 # CREDITS
 
