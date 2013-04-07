@@ -39,7 +39,7 @@ resources:
 version: 0.001002
 x_BuiltWith:
   modules:
-    DBIx::Class::DeploymentHandler: 'NA(possibly not installed)'
+    DBIx::Class::DeploymentHandler: 0.002206
     DBIx::Class::Schema::Config: 'NA(possibly not installed)'
     Dist::Zilla::PluginBundle::Author::KENTNL: 1.7.2
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
