@@ -6,13 +6,14 @@ BEGIN {
   $App::DH::AUTHORITY = 'cpan:MSTROUT';
 }
 {
-  $App::DH::VERSION = '0.001001';
+  $App::DH::VERSION = '0.001002';
 }
 
 # ABSTRACT: Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler
 
 use DBIx::Class::DeploymentHandler;
 use Moose;
+use MooseX::Getopt 0.48 ();
 use MooseX::AttributeShortcuts;
 
 
@@ -205,7 +206,7 @@ App::DH - Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::Deploy
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 

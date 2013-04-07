@@ -50,15 +50,15 @@ sub pmver {
 
 eval { $v .= pmver('DBIx::Class::DeploymentHandler','any version') };
 eval { $v .= pmver('DBIx::Class::Schema::Config','any version') };
-eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.7.0') };
+eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.7.2') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
 eval { $v .= pmver('File::Find','any version') };
 eval { $v .= pmver('File::Temp','any version') };
-eval { $v .= pmver('Module::Build','0.4003') };
+eval { $v .= pmver('Module::Build','0.4004') };
 eval { $v .= pmver('Module::Runtime','any version') };
 eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('MooseX::AttributeShortcuts','any version') };
-eval { $v .= pmver('MooseX::Getopt','any version') };
+eval { $v .= pmver('MooseX::Getopt','0.48') };
 eval { $v .= pmver('Pod::Coverage::TrustPod','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
 eval { $v .= pmver('Test::More','0.98') };
