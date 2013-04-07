@@ -1,6 +1,6 @@
 Release history for App-DH
 
-0.001002 2013-04-07T22:11:08Z
+0.001002 2013-04-07T22:12:02Z
  [Bugfix]
  - Depend on MooseX::Getopt 0.48 because we wrap one of the methods added
    at that version.
