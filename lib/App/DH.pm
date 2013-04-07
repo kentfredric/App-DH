@@ -13,7 +13,7 @@ BEGIN {
 
 use DBIx::Class::DeploymentHandler;
 use Moose;
-use MooseX::GetOpt 0.48 ();
+use MooseX::Getopt 0.48 ();
 use MooseX::AttributeShortcuts;
 
 
