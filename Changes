@@ -1,6 +1,24 @@
 Release history for App-DH
 
 {{$NEXT}}
+ [Bugfix]
+ - Depend on MooseX::Getopt 0.48 because we wrap one of the methods added
+   at that version.
+
+ [Dependencies::Changed / build requires]
+ - Module::Build 0.4003 → 0.4004
+
+ [Dependencies::Changed / configure requires]
+ - Module::Build 0.4003 → 0.4004
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.0 → v1.7.2
+
+ [Dependencies::Changed / runtime requires]
+ - MooseX::Getopt 0 → 0.48
+
+ [Packaging]
+ - Utilise Module::Build 0.4004 test_requires
 
 0.001001 2013-02-15T16:09:39Z
  - default databases are now chosen by introspecting your

@@ -7,6 +7,7 @@ package App::DH;
 
 use DBIx::Class::DeploymentHandler;
 use Moose;
+use MooseX::Getopt 0.48 ();
 use MooseX::AttributeShortcuts;
 
 =head1 SYNOPSIS
