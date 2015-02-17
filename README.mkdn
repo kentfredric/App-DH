@@ -144,7 +144,7 @@ The authoring of the initial incarnation of this code is kindly sponsored by [no
 
 # AUTHORS
 
-- kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>
+- kentnl - Kent Fredric (cpan:KENTNL) <kentnl@cpan.org>
 - mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>
 
 # COPYRIGHT AND LICENSE
