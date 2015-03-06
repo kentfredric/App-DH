@@ -6,6 +6,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - perl 5.006
 
  [Added / runtime requires]
+ - Carp
  - lib
 
  [Added / test requires]

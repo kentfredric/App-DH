@@ -166,11 +166,11 @@ stop_words = ddls DDL backend DDL's DDLs mst nordaaker CPAN kentnl
 
 [-Editor::RequireEmacsFileVariables]
 
-[-ErrorHandling::RequireCarping]
+[ErrorHandling::RequireCarping]
 
 [ErrorHandling::RequireCheckingReturnValueOfEval]
 
-[ErrorHandling::RequireUseOfExceptions]
+[-ErrorHandling::RequireUseOfExceptions]
 
 [InputOutput::ProhibitBacktickOperators]
 
