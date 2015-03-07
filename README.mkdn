@@ -51,6 +51,11 @@ If you don't like any of the defaults, you can subclass to override
     }
     MyApp->new_with_options->run;
 
+# DESCRIPTION
+
+App::DH is a basic skeleton of a command line interface for the excellent
+[`DBIx::Class::DeploymentHandler`](https://metacpan.org/pod/DBIx::Class::DeploymentHandler), to make executing database deployment stages easier.
+
 # COMMANDS
 
 ## write\_ddl
@@ -136,7 +141,8 @@ Default is introspected from looking at whatever ["--connection\_name"](#connect
 
 # CREDITS
 
-This module is mostly code by mst, sponsored by [nordaaker.com](http://nordaaker.com), and I've only tidied it up and made it more CPAN Friendly.
+This module is mostly code by mst, sponsored by [nordaaker.com](http://nordaaker.com), and I've only tidied it up and made it
+more CPAN Friendly.
 
 # SPONSORS
 

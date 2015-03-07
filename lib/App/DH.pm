@@ -330,9 +330,15 @@ If you don't like any of the defaults, you can subclass to override
     }
     MyApp->new_with_options->run;
 
+=head1 DESCRIPTION
+
+App::DH is a basic skeleton of a command line interface for the excellent
+L<< C<DBIx::Class::DeploymentHandler>|DBIx::Class::DeploymentHandler >>, to make executing database deployment stages easier.
+
 =head1 CREDITS
 
-This module is mostly code by mst, sponsored by L<nordaaker.com|http://nordaaker.com>, and I've only tidied it up and made it more CPAN Friendly.
+This module is mostly code by mst, sponsored by L<nordaaker.com|http://nordaaker.com>, and I've only tidied it up and made it
+more CPAN Friendly.
 
 =head1 SPONSORS
 
