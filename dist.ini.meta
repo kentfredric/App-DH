@@ -12,6 +12,8 @@ copyright_holder = The App::DH Authors, Contributors, and Sponsors
 [@Author::KENTNL]
 :version          = 2.023
 git_versions      = 1
+toolkit           = eumm
+toolkit_hardness  = soft
 twitter_extra_hash_tags = #dbic
 authority = cpan:MSTROUT
 copyfiles = LICENSE
