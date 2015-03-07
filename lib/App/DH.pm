@@ -509,7 +509,7 @@ The authoring of the initial incarnation of this code is kindly sponsored by L<n
 
 =item *
 
-kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>
+kentnl - Kent Fredric (cpan:KENTNL) <kentnl@cpan.org>
 
 =item *
 
