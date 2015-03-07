@@ -1,6 +1,8 @@
 App::DH
 
-
+App::DH is a basic skeleton of a command line interface for the
+excellent "DBIx::Class::DeploymentHandler", to make executing database
+deployment stages easier.
 
 INSTALLATION
 
