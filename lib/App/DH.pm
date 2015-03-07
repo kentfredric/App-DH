@@ -195,7 +195,7 @@ has database => (
   is            => lazy =>,
   isa           => ArrayRef =>,
   cmd_aliases   => d =>,
-  documentation => 'database backends to generate DDLs for. See SQL::Translator::Producer:: for valid values',
+  documentation => 'SQL::Translator::Producer::* database backends to generate DDLs for',
 );
 
 has _dh     => ( is => 'lazy' );
