@@ -16,65 +16,6 @@ use Moose qw( with has around );
 use MooseX::Getopt 0.48 ();
 use MooseX::AttributeShortcuts;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 with 'MooseX::Getopt';
 
 
@@ -491,6 +432,11 @@ Can be specified multiple times.
 
 Default is introspected from looking at whatever L</--connection_name> connects to.
 
+=for Pod::Coverage     cmd_write_ddl
+    cmd_install
+    cmd_upgrade
+    run
+
 =head1 CREDITS
 
 This module is mostly code by mst, sponsored by L<nordaaker.com|http://nordaaker.com>, and I've only tidied it up and made it more CPAN Friendly.
@@ -498,11 +444,6 @@ This module is mostly code by mst, sponsored by L<nordaaker.com|http://nordaaker
 =head1 SPONSORS
 
 The authoring of the initial incarnation of this code is kindly sponsored by L<nordaaker.com|http://nordaaker.com>.
-
-=for Pod::Coverage     cmd_write_ddl
-    cmd_install
-    cmd_upgrade
-    run
 
 =head1 AUTHORS
 
