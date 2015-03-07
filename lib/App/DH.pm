@@ -1,19 +1,73 @@
-use 5.006;    # our
 use strict;
 use warnings;
 
 package App::DH;
-
-our $VERSION = '0.001003';
-
+$App::DH::VERSION = '0.001003';
 # ABSTRACT: Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler
 
-our $AUTHORITY = 'cpan:MSTROUT'; # AUTHORITY
-
-use Carp qw( croak );
 use DBIx::Class::DeploymentHandler;
-use Moose qw( with has around );
+use Moose;
 use MooseX::Getopt 0.48 ();
+use MooseX::AttributeShortcuts;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 with 'MooseX::Getopt';
 
@@ -138,16 +192,14 @@ has script_dir => (
 
 has database => (
   traits        => ['Getopt'],
-  is            => 'ro',
-  lazy          => 1,
-  builder       => '_build_database',
+  is            => lazy =>,
   isa           => ArrayRef =>,
   cmd_aliases   => d =>,
-  documentation => 'SQL::Translator::Producer::* database backends to generate DDLs for',
+  documentation => 'database backends to generate DDLs for. See SQL::Translator::Producer:: for valid values',
 );
 
-has _dh     => ( is => 'ro', lazy => 1, builder => '_build__dh' );
-has _schema => ( is => 'ro', lazy => 1, builder => '_build__schema' );
+has _dh     => ( is => 'lazy' );
+has _schema => ( is => 'lazy' );
 
 sub _build__schema {
   my ($self) = @_;
@@ -166,7 +218,7 @@ sub _build__dh {
       force_overwrite  => $self->force,
       script_directory => $self->script_dir,
       databases        => $self->database,
-    },
+    }
   );
 }
 
@@ -205,8 +257,8 @@ sub cmd_write_ddl {
     $self->_dh->prepare_upgrade(
       {
         from_version => $v - 1,
-        to_version   => $v,
-      },
+        to_version   => $v
+      }
     );
   }
   return;
@@ -263,7 +315,7 @@ my $list_cmds_usage =
 
 
 around print_usage_text => sub {
-  my ( undef, undef, $usage ) = @_;
+  my ( $orig, $self, $usage ) = @_;
   my ($text) = $usage->text();
   $text =~ s{
         ( long\s+options[.]+[]] )
@@ -271,16 +323,16 @@ around print_usage_text => sub {
         $1 . ' ' . $list_cmds_opt
     }msex;
   $text .= qq{\n} . $text . $list_cmds_usage . qq{\n};
-  print $text or croak q[Cannot write to STDOUT];
+  print $text or die q[Cannot write to STDOUT];
   exit 0;
 };
 
 sub run {
   my ($self) = @_;
   my ( $cmd, @what ) = @{ $self->extra_argv };
-  croak "Must supply a command\nCommands: $list_cmds\nFailed" unless $cmd;
-  croak "Extra argv detected - command only please\nFailed" if @what;
-  croak "No such command ${cmd}\nCommands: $list_cmds\nFailed"
+  die "Must supply a command\nCommands: $list_cmds\n" unless $cmd;
+  die "Extra argv detected - command only please\n" if @what;
+  die "No such command ${cmd}\nCommands: $list_cmds\n"
     unless exists $cmds{$cmd};
   my $code = $cmds{$cmd};
   return $self->$code();
@@ -350,11 +402,6 @@ If you don't like any of the defaults, you can subclass to override
     }
     MyApp->new_with_options->run;
 
-=head1 DESCRIPTION
-
-App::DH is a basic skeleton of a command line interface for the excellent
-L<< C<DBIx::Class::DeploymentHandler>|DBIx::Class::DeploymentHandler >>, to make executing database deployment stages easier.
-
 =head1 COMMANDS
 
 =head2 write_ddl
@@ -363,7 +410,7 @@ Only generate ddls for deploy/upgrade
 
     dh.pl [...params] write_ddl
 
-=head2 install
+=head2 write_ddl
 
 Install to connection L</--connection_name>
 
@@ -438,19 +485,18 @@ Can be specified multiple times.
 
 Default is introspected from looking at whatever L</--connection_name> connects to.
 
-=for Pod::Coverage     cmd_write_ddl
-    cmd_install
-    cmd_upgrade
-    run
-
 =head1 CREDITS
 
-This module is mostly code by mst, sponsored by L<nordaaker.com|http://nordaaker.com>, and I've only tidied it up and made it
-more CPAN Friendly.
+This module is mostly code by mst, sponsored by L<nordaaker.com|http://nordaaker.com>, and I've only tidied it up and made it more CPAN Friendly.
 
 =head1 SPONSORS
 
 The authoring of the initial incarnation of this code is kindly sponsored by L<nordaaker.com|http://nordaaker.com>.
+
+=for Pod::Coverage     cmd_write_ddl
+    cmd_install
+    cmd_upgrade
+    run
 
 =head1 AUTHORS
 
@@ -458,7 +504,7 @@ The authoring of the initial incarnation of this code is kindly sponsored by L<n
 
 =item *
 
-kentnl - Kent Fredric (cpan:KENTNL) <kentnl@cpan.org>
+kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>
 
 =item *
 
