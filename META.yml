@@ -47,20 +47,6 @@ x_Dist_Zilla:
     version: '5.021009'
   plugins:
     -
-      class: Dist::Zilla::Plugin::Git::NextVersion::Sanitized
-      config:
-        Dist::Zilla::Plugin::Git::NextVersion:
-          first_version: '0.001000'
-          version_by_branch: '0'
-          version_regexp: (?^u:^(.*)-source$)
-        Dist::Zilla::Role::Git::Repo:
-          repo_root: .
-        Dist::Zilla::Role::Version::Sanitize:
-          mantissa: '6'
-          normal_form: numify
-      name: '@Author::KENTNL/Git::NextVersion::Sanitized'
-      version: '0.002002'
-    -
       class: Dist::Zilla::Plugin::MetaConfig
       name: '@Author::KENTNL/MetaConfig'
       version: '5.032'
@@ -223,9 +209,13 @@ x_Dist_Zilla:
       name: '@Author::KENTNL/ManifestSkip'
       version: '5.032'
     -
-      class: Dist::Zilla::Plugin::PkgVersion
-      name: '@Author::KENTNL/PkgVersion'
-      version: '5.032'
+      class: Dist::Zilla::Plugin::RewriteVersion::Sanitized
+      config:
+        Dist::Zilla::Role::Version::Sanitize:
+          mantissa: '6'
+          normal_form: numify
+      name: '@Author::KENTNL/RewriteVersion::Sanitized'
+      version: '0.001005'
     -
       class: Dist::Zilla::Plugin::PodWeaver
       config:
@@ -424,6 +414,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Git::NextRelease
       name: '@Author::KENTNL/Git::NextRelease'
       version: '0.004000'
+    -
+      class: Dist::Zilla::Plugin::BumpVersionAfterRelease
+      name: '@Author::KENTNL/BumpVersionAfterRelease'
+      version: '0.009'
     -
       class: Dist::Zilla::Plugin::Git::Commit
       config:
