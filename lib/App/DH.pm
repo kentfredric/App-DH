@@ -263,7 +263,7 @@ my $list_cmds_usage =
 
 
 around print_usage_text => sub {
-  my ( $orig, $self, $usage ) = @_;
+  my ( undef, undef, $usage ) = @_;
   my ($text) = $usage->text();
   $text =~ s{
         ( long\s+options[.]+[]] )
