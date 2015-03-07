@@ -879,6 +879,9 @@
          "version" : "5.032"
       }
    },
-   "x_authority" : "cpan:MSTROUT"
+   "x_authority" : "cpan:MSTROUT",
+   "x_contributors" : [
+      "Kent Fredric <kentnl@cpan.org>"
+   ]
 }
 
