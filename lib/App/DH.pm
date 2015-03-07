@@ -14,7 +14,6 @@ use Carp qw( croak );
 use DBIx::Class::DeploymentHandler;
 use Moose qw( with has around );
 use MooseX::Getopt 0.48 ();
-use MooseX::AttributeShortcuts;
 
 with 'MooseX::Getopt';
 
@@ -139,14 +138,16 @@ Default is introspected from looking at whatever L</--connection_name> connects 
 
 has database => (
   traits        => ['Getopt'],
-  is            => lazy =>,
+  is            => 'ro',
+  lazy          => 1,
+  builder       => '_build_database',
   isa           => ArrayRef =>,
   cmd_aliases   => d =>,
   documentation => 'SQL::Translator::Producer::* database backends to generate DDLs for',
 );
 
-has _dh     => ( is => 'lazy' );
-has _schema => ( is => 'lazy' );
+has _dh     => ( is => 'ro', lazy => 1, builder => '_build__dh' );
+has _schema => ( is => 'ro', lazy => 1, builder => '_build__schema' );
 
 sub _build__schema {
   my ($self) = @_;
