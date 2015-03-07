@@ -358,7 +358,7 @@ Only generate ddls for deploy/upgrade
 
     dh.pl [...params] write_ddl
 
-=head2 write_ddl
+=head2 install
 
 Install to connection L</--connection_name>
 
