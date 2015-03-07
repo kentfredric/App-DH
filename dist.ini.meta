@@ -11,6 +11,10 @@ copyright_holder = The App::DH Authors, Contributors, and Sponsors
 [@Author::KENTNL]
 :version          = 1.2.0
 git_versions      = 1
+toolkit_hardness = soft
+toolkit = eumm
+srcreadme = mkdn
+
 ; version_major     = 0
 ; version_minor     = 1
 ; the following data denotes when this minor was minted

@@ -1,6 +1,6 @@
 Release history for App-DH
 
-0.001003 2015-03-07T13:05:29Z 2736b04
+0.001003 2015-03-07T13:06:51Z 2656801
  [Bugfix]
  - Depend on MooseX::Getopt 0.48 because we wrap one of the methods added at that version.
 
@@ -20,7 +20,7 @@ Release history for App-DH
  - Dependencies changed since 0.001002, see misc/*.deps* for details
  - build: ↑1
  - configure: +1 ↑1
- - develop: +53 -2 (recommends: -1, suggests: +1 -1)
+ - develop: +52 -2 (recommends: -1, suggests: +1 ↑1)
  - runtime: +1 (recommends: +1)
  - test: +3 ↑1 -2 (recommends: +1)
 
