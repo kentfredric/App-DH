@@ -8,7 +8,7 @@ use ExtUtils::MakeMaker;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler",
-  "AUTHOR" => "kentnl - Kent Fredric (cpan:KENTNL) <kentnl\@cpan.org>, mst - Matt S. Trout (cpan:MSTROUT) <mst\@shadowcat.co.uk>",
+  "AUTHOR" => "kentnl - Kent Fredric (cpan:KENTNL) <kentfredric\@gmail.com>, mst - Matt S. Trout (cpan:MSTROUT) <mst\@shadowcat.co.uk>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },

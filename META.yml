@@ -1,7 +1,7 @@
 ---
 abstract: 'Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler'
 author:
-  - 'kentnl - Kent Fredric (cpan:KENTNL) <kentnl@cpan.org>'
+  - 'kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>'
   - 'mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>'
 build_requires:
   ExtUtils::MakeMaker: '0'
@@ -575,3 +575,5 @@ x_Dist_Zilla:
       is_trial: '0'
     version: '5.032'
 x_authority: cpan:MSTROUT
+x_contributors:
+  - 'Kent Fredric <kentnl@cpan.org>'
