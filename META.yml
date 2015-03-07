@@ -1,7 +1,7 @@
 ---
 abstract: 'Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler'
 author:
-  - 'kentnl - Kent Fredric (cpan:KENTNL) <kentfredric@gmail.com>'
+  - 'kentnl - Kent Fredric (cpan:KENTNL) <kentnl@cpan.org>'
   - 'mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>'
 build_requires:
   ExtUtils::MakeMaker: '0'
@@ -120,6 +120,7 @@ x_Dist_Zilla:
             - README
             - README.mkdn
             - README.pod
+            - LICENSE
           exclude_match: []
           follow_symlinks: '0'
           include_dotfiles: '1'
@@ -152,6 +153,10 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Author::KENTNL::TravisCI
       name: '@Author::KENTNL/Author::KENTNL::TravisCI'
       version: '0.001002'
+    -
+      class: Dist::Zilla::Plugin::CopyFilesFromBuild
+      name: '@Author::KENTNL/CopyXBuild'
+      version: '0.150250'
     -
       class: Dist::Zilla::Plugin::MetaTests
       name: '@Author::KENTNL/MetaTests'
