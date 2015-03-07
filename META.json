@@ -97,6 +97,7 @@
             "Moose" : "2.000"
          },
          "requires" : {
+            "Carp" : "0",
             "DBIx::Class::DeploymentHandler" : "0",
             "Module::Runtime" : "0",
             "Moose" : "0",

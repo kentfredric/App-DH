@@ -4,6 +4,7 @@
    },
    "modules" : {
       "CPAN::Meta" : "2.143240",
+      "Carp" : "1.35",
       "DBIx::Class::DeploymentHandler" : "0.002215",
       "Dist::Zilla" : "5.032",
       "Dist::Zilla::App::Command::bakeini" : "0.002000",

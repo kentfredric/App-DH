@@ -18,6 +18,7 @@ my %WriteMakefileArgs = (
   "MIN_PERL_VERSION" => "5.006",
   "NAME" => "App::DH",
   "PREREQ_PM" => {
+    "Carp" => 0,
     "DBIx::Class::DeploymentHandler" => 0,
     "Module::Runtime" => 0,
     "Moose" => 0,
@@ -40,6 +41,7 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Carp" => 0,
   "DBIx::Class::DeploymentHandler" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec" => 0,
