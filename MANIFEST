@@ -9,7 +9,7 @@ MANIFEST
 META.json
 META.yml
 README
-dist.ini
+dist.ini.meta
 example/dh.pl
 example/subclass.pl
 lib/App/DH.pm
