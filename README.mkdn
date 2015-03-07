@@ -59,7 +59,7 @@ Only generate ddls for deploy/upgrade
 
     dh.pl [...params] write_ddl
 
-## write\_ddl
+## install
 
 Install to connection ["--connection\_name"](#connection_name)
 

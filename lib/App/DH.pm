@@ -205,7 +205,7 @@ sub cmd_write_ddl {
   return;
 }
 
-=cmd write_ddl
+=cmd install
 
 Install to connection L</--connection_name>
 
