@@ -12,11 +12,11 @@ copyright_holder = The App::DH Authors, Contributors, and Sponsors
 [@Author::KENTNL]
 :version          = 2.023
 bumpversions      = 1
+toolkit           = eumm
+toolkit_hardness  = soft
 twitter_extra_hash_tags = #dbic
 authority = cpan:MSTROUT
 copyfiles = LICENSE
-toolkit           = eumm
-toolkit_hardness  = soft
 srcreadme = mkdn
 
 ; version_major     = 0
