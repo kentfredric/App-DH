@@ -7,6 +7,8 @@ our $VERSION = '0.001003';
 
 # ABSTRACT: Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler
 
+# AUTHORITY
+
 use DBIx::Class::DeploymentHandler;
 use Moose;
 use MooseX::Getopt 0.48 ();
