@@ -23,6 +23,9 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  [Removed / configure requires]
  - Module::Build 0.4004
 
+ [Removed / runtime requires]
+ - MooseX::AttributeShortcuts
+
  [Removed / test requires]
  - File::Find
  - File::Temp

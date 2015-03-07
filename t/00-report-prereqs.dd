@@ -85,7 +85,6 @@ do { my $x = {
                                       'DBIx::Class::DeploymentHandler' => '0',
                                       'Module::Runtime' => '0',
                                       'Moose' => '0',
-                                      'MooseX::AttributeShortcuts' => '0',
                                       'MooseX::Getopt' => '0.48',
                                       'lib' => '0',
                                       'perl' => '5.006',
