@@ -10,6 +10,7 @@ our $VERSION = '0.001003';
 
 our $AUTHORITY = 'cpan:MSTROUT'; # AUTHORITY
 
+use Carp qw( croak );
 use DBIx::Class::DeploymentHandler;
 use Moose qw( with has around );
 use MooseX::Getopt 0.48 ();
@@ -328,16 +329,16 @@ around print_usage_text => sub {
         $1 . ' ' . $list_cmds_opt
     }msex;
   $text .= qq{\n} . $text . $list_cmds_usage . qq{\n};
-  print $text or die q[Cannot write to STDOUT];
+  print $text or croak q[Cannot write to STDOUT];
   exit 0;
 };
 
 sub run {
   my ($self) = @_;
   my ( $cmd, @what ) = @{ $self->extra_argv };
-  die "Must supply a command\nCommands: $list_cmds\n" unless $cmd;
-  die "Extra argv detected - command only please\n" if @what;
-  die "No such command ${cmd}\nCommands: $list_cmds\n"
+  croak "Must supply a command\nCommands: $list_cmds\nFailed" unless $cmd;
+  croak "Extra argv detected - command only please\nFailed" if @what;
+  croak "No such command ${cmd}\nCommands: $list_cmds\nFailed"
     unless exists $cmds{$cmd};
   my $code = $cmds{$cmd};
   return $self->$code();
