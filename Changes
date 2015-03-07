@@ -1,13 +1,16 @@
 Release history for App-DH
 
-0.001003 2015-03-07T15:01:21Z f530ae5
+0.001003 2015-03-07T15:01:57Z b1fd0c8
  [Dependencies::Stats]
  - Dependencies changed since 0.001002, see misc/*.deps* for details
  - build: -1
  - configure: +2 -1 (recommends: +1)
  - develop: +52 -2 (recommends: +1 -1, suggests: +1 ↑1)
- - runtime: +2 (recommends: +1)
+ - runtime: +2 -1 (recommends: +1)
  - test: +3 ↓1 -2 (recommends: +3)
+
+ [Internals]
+ - A few dependencies that were no longer needed have been shaved from runtime.
 
  [Meta]
  - Move repository to kentnl org
