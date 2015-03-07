@@ -11,7 +11,7 @@ our $VERSION = '0.001003';
 our $AUTHORITY = 'cpan:MSTROUT'; # AUTHORITY
 
 use DBIx::Class::DeploymentHandler;
-use Moose;
+use Moose qw( with has around );
 use MooseX::Getopt 0.48 ();
 use MooseX::AttributeShortcuts;
 
