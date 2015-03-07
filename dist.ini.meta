@@ -15,9 +15,9 @@ bumpversions      = 1
 toolkit           = eumm
 toolkit_hardness  = soft
 twitter_extra_hash_tags = #dbic
-authority = cpan:MSTROUT
-copyfiles = LICENSE
-srcreadme = mkdn
+authority         = cpan:MSTROUT
+copyfiles         = LICENSE
+srcreadme         = mkdn
 
 ; version_major     = 0
 ; version_minor     = 1
