@@ -4,7 +4,7 @@ App::DH - Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::Deploy
 
 # VERSION
 
-version 0.001002
+version 0.001003
 
 # SYNOPSIS
 
@@ -19,23 +19,23 @@ Basic usage:
 
 \--
 
-	usage: dh.pl [-?cdfhIos] [long options...] (install|upgrade|write_ddl)
-		-h -? --usage --help     Prints this usage information.
-		-c --connection_name     either a valid DBI DSN or an alias
-		                         configured by DBIx::Class::Schema::Config
-		-f --force               forcefully replace existing DDLs. [DANGER]
-		-s --schema              the class name of the schema to generate
-		                         DDLs/deploy for
-		-I --include             paths to load into @INC
-		-o --script_dir          output path
-		-d --database            database backends to generate DDLs for. See
-		                         SQL::Translator::Producer::* for valid values
+        usage: dh.pl [-?cdfhIos] [long options...] (install|upgrade|write_ddl)
+                -h -? --usage --help     Prints this usage information.
+                -c --connection_name     either a valid DBI DSN or an alias
+                                         configured by DBIx::Class::Schema::Config
+                -f --force               forcefully replace existing DDLs. [DANGER]
+                -s --schema              the class name of the schema to generate
+                                         DDLs/deploy for
+                -I --include             paths to load into @INC
+                -o --script_dir          output path
+                -d --database            database backends to generate DDLs for. See
+                                         SQL::Translator::Producer::* for valid values
 
-		commands:
+                commands:
 
-		install                       install to the specified database connection
-		upgrade                       upgrade the specified database connection
-		write_ddl                     only write ddl files
+                install                       install to the specified database connection
+                upgrade                       upgrade the specified database connection
+                write_ddl                     only write ddl files
 
 If you don't like any of the defaults, you can subclass to override
 
@@ -61,36 +61,36 @@ Only generate ddls for deploy/upgrade
 
 ## write\_ddl
 
-Install to connection ["--connection\_name"](#--connection\_name)
+Install to connection ["--connection\_name"](#connection_name)
 
     dh.pl [...params] install
 
 ## upgrade
 
-Upgrade connection ["--connection\_name"](#--connection\_name)
+Upgrade connection ["--connection\_name"](#connection_name)
 
     dh.pl [...params] upgrade
 
 # PARAMETERS
 
-## \--connection\_name
+## --connection\_name
 
     -c/--connection_name
 
 Specify the connection details to use for deployment.
-Can be a name of a configuration in a `DBIx::Class::Schema::Config` configuration if the ["--schema"](#--schema) uses it.
+Can be a name of a configuration in a `DBIx::Class::Schema::Config` configuration if the ["--schema"](#schema) uses it.
 
     --connection_name 'dbi:SQLite:/path/to/db'
 
     -cdevelopment
 
-## \--force
+## --force
 
 Overwrite existing DDL files of the same version.
 
     -f/--force
 
-## \--schema
+## --schema
 
     -s/--schema
 
@@ -99,7 +99,7 @@ The class name of the schema to load for DDL/Deployment
     -sMyProject::Schema
     --schema MyProject::Schema
 
-## \--include
+## --include
 
     -I/--include
 
@@ -110,7 +110,7 @@ Add a given library path to @INC prior to loading `schema`
 
 May be specified multiple times.
 
-## \--script\_dir
+## --script\_dir
 
     -o/--script_dir
 
@@ -121,7 +121,7 @@ Default is ./share/ddl
     -o/tmp/ddl
     --script_dir /tmp/ddl
 
-## \--database
+## --database
 
     -d/--database
 
@@ -132,7 +132,7 @@ Specify the `SQL::Translator::Producer::*` backend to use for generating DDLs.
 
 Can be specified multiple times.
 
-Default is introspected from looking at whatever ["--connection\_name"](#--connection\_name) connects to.
+Default is introspected from looking at whatever ["--connection\_name"](#connection_name) connects to.
 
 # CREDITS
 
@@ -149,7 +149,7 @@ The authoring of the initial incarnation of this code is kindly sponsored by [no
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by The App::DH Authors, Contributors, and Sponsors.
+This software is copyright (c) 2015 by The App::DH Authors, Contributors, and Sponsors.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
