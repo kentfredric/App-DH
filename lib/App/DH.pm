@@ -1,3 +1,4 @@
+use 5.006;    # our
 use strict;
 use warnings;
 
@@ -6,6 +7,8 @@ package App::DH;
 our $VERSION = '0.001003';
 
 # ABSTRACT: Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler
+
+our $AUTHORITY = 'cpan:MSTROUT'; # AUTHORITY
 
 use DBIx::Class::DeploymentHandler;
 use Moose;
