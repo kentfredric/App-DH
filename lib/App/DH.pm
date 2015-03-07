@@ -2,13 +2,7 @@ use strict;
 use warnings;
 
 package App::DH;
-BEGIN {
-  $App::DH::AUTHORITY = 'cpan:MSTROUT';
-}
-{
-  $App::DH::VERSION = '0.001002';
-}
-
+$App::DH::VERSION = '0.001003';
 # ABSTRACT: Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler
 
 use DBIx::Class::DeploymentHandler;
@@ -18,7 +12,76 @@ use MooseX::AttributeShortcuts;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 with 'MooseX::Getopt';
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has connection_name => (
@@ -32,6 +95,13 @@ has connection_name => (
 );
 
 
+
+
+
+
+
+
+
 has force => (
   traits        => ['Getopt'],
   is            => ro =>,
@@ -40,6 +110,16 @@ has force => (
   cmd_aliases   => f =>,
   documentation => 'forcefully replace existing DDLs. [DANGER]',
 );
+
+
+
+
+
+
+
+
+
+
 
 
 has schema => (
@@ -52,6 +132,18 @@ has schema => (
 );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 has include => (
   traits        => ['Getopt'],
   is            => ro =>,
@@ -62,6 +154,18 @@ has include => (
 );
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 has script_dir => (
   traits        => ['Getopt'],
   is            => ro =>,
@@ -70,6 +174,20 @@ has script_dir => (
   cmd_aliases   => o =>,
   documentation => 'output path',
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has database => (
@@ -124,6 +242,13 @@ sub _build_database {
 }
 
 
+
+
+
+
+
+
+
 sub cmd_write_ddl {
   my ($self) = @_;
   $self->_dh->prepare_install;
@@ -140,11 +265,25 @@ sub cmd_write_ddl {
 }
 
 
+
+
+
+
+
+
+
 sub cmd_install {
   my $self = shift;
   $self->_dh->install;
   return;
 }
+
+
+
+
+
+
+
 
 
 sub cmd_upgrade { shift->_dh->upgrade; return }
@@ -163,6 +302,16 @@ my $list_cmds = join q[ ], sort keys %cmds;
 my $list_cmds_opt = '(' . ( join q{|}, sort keys %cmds ) . ')';
 my $list_cmds_usage =
   ( join qq{\n}, q{}, qq{\tcommands:}, q{}, ( map { ( sprintf qq{\t%-30s%s}, $_, $cmd_desc{$_} ) } sort keys %cmds ), q{} );
+
+
+
+
+
+
+
+
+
+
 
 
 around print_usage_text => sub {
@@ -198,7 +347,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -206,7 +355,7 @@ App::DH - Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::Deploy
 
 =head1 VERSION
 
-version 0.001002
+version 0.001003
 
 =head1 SYNOPSIS
 
@@ -365,7 +514,7 @@ mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by The App::DH Authors, Contributors, and Sponsors.
+This software is copyright (c) 2015 by The App::DH Authors, Contributors, and Sponsors.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

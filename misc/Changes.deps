@@ -1,0 +1,14 @@
+This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
+
+0.001002 2013-04-07T22:12:52Z
+ [Changed / build requires]
+ - Module::Build 0.4003 → 0.4004
+
+ [Changed / configure requires]
+ - Module::Build 0.4003 → 0.4004
+
+ [Changed / runtime requires]
+ - MooseX::Getopt 0 → 0.48
+
+0.001001 2013-02-15T16:09:39Z
+
