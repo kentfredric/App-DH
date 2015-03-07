@@ -10,65 +10,6 @@ use Moose;
 use MooseX::Getopt 0.48 ();
 use MooseX::AttributeShortcuts;
 
-=head1 SYNOPSIS
-
-Basic usage:
-
-    #!/usr/bin/env perl
-    #
-    # dh.pl
-
-    use App::DH;
-    App::DH->new_with_options->run;
-
---
-
-	usage: dh.pl [-?cdfhIos] [long options...] (install|upgrade|write_ddl)
-		-h -? --usage --help     Prints this usage information.
-		-c --connection_name     either a valid DBI DSN or an alias
-		                         configured by DBIx::Class::Schema::Config
-		-f --force               forcefully replace existing DDLs. [DANGER]
-		-s --schema              the class name of the schema to generate
-		                         DDLs/deploy for
-		-I --include             paths to load into @INC
-		-o --script_dir          output path
-		-d --database            database backends to generate DDLs for. See
-		                         SQL::Translator::Producer::* for valid values
-
-		commands:
-
-		install                       install to the specified database connection
-		upgrade                       upgrade the specified database connection
-		write_ddl                     only write ddl files
-
-
-If you don't like any of the defaults, you can subclass to override
-
-    use App::DH;
-    {
-        package MyApp;
-        use  Moose;
-        extends 'App::DH';
-
-        has '+connection_name' => ( default => sub { 'production' } );
-        has '+schema'          => ( default => sub { 'MyApp::Schema' } );
-        __PACKAGE__->meta->make_immutable;
-    }
-    MyApp->new_with_options->run;
-
-
-=cut
-
-=head1 CREDITS
-
-This module is mostly code by mst, sponsored by L<nordaaker.com|http://nordaaker.com>, and I've only tidied it up and made it more CPAN Friendly.
-
-=head1 SPONSORS
-
-The authoring of the initial incarnation of this code is kindly sponsored by L<nordaaker.com|http://nordaaker.com>.
-
-=cut
-
 with 'MooseX::Getopt';
 
 =param --connection_name
@@ -342,3 +283,59 @@ __PACKAGE__->meta->make_immutable;
 no Moose;
 
 1;
+
+=head1 SYNOPSIS
+
+Basic usage:
+
+    #!/usr/bin/env perl
+    #
+    # dh.pl
+
+    use App::DH;
+    App::DH->new_with_options->run;
+
+--
+
+	usage: dh.pl [-?cdfhIos] [long options...] (install|upgrade|write_ddl)
+		-h -? --usage --help     Prints this usage information.
+		-c --connection_name     either a valid DBI DSN or an alias
+		                         configured by DBIx::Class::Schema::Config
+		-f --force               forcefully replace existing DDLs. [DANGER]
+		-s --schema              the class name of the schema to generate
+		                         DDLs/deploy for
+		-I --include             paths to load into @INC
+		-o --script_dir          output path
+		-d --database            database backends to generate DDLs for. See
+		                         SQL::Translator::Producer::* for valid values
+
+		commands:
+
+		install                       install to the specified database connection
+		upgrade                       upgrade the specified database connection
+		write_ddl                     only write ddl files
+
+
+If you don't like any of the defaults, you can subclass to override
+
+    use App::DH;
+    {
+        package MyApp;
+        use  Moose;
+        extends 'App::DH';
+
+        has '+connection_name' => ( default => sub { 'production' } );
+        has '+schema'          => ( default => sub { 'MyApp::Schema' } );
+        __PACKAGE__->meta->make_immutable;
+    }
+    MyApp->new_with_options->run;
+
+=head1 CREDITS
+
+This module is mostly code by mst, sponsored by L<nordaaker.com|http://nordaaker.com>, and I've only tidied it up and made it more CPAN Friendly.
+
+=head1 SPONSORS
+
+The authoring of the initial incarnation of this code is kindly sponsored by L<nordaaker.com|http://nordaaker.com>.
+
+=cut
