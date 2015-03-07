@@ -223,7 +223,7 @@ sub _build__dh {
       force_overwrite  => $self->force,
       script_directory => $self->script_dir,
       databases        => $self->database,
-    }
+    },
   );
 }
 
@@ -262,8 +262,8 @@ sub cmd_write_ddl {
     $self->_dh->prepare_upgrade(
       {
         from_version => $v - 1,
-        to_version   => $v
-      }
+        to_version   => $v,
+      },
     );
   }
   return;
