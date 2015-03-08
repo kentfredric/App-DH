@@ -21,7 +21,7 @@ name: App-DH
 provides:
   App::DH:
     file: lib/App/DH.pm
-    version: '0.001003'
+    version: '0.002000'
 recommends:
   DBIx::Class::Schema::Config: '0'
   Moose: '2.000'
@@ -39,7 +39,7 @@ resources:
   bugtracker: https://github.com/kentnl/App-DH/issues
   homepage: https://github.com/kentnl/App-DH
   repository: https://github.com/kentnl/App-DH.git
-version: '0.001003'
+version: '0.002000'
 x_BuiltWith:
   external_file: misc/built_with.json
 x_Dist_Zilla:
@@ -402,7 +402,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: 0.001003-source
+          tag: 0.002000-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -456,7 +456,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: 0
-          tag: '0.001003'
+          tag: '0.002000'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
