@@ -4,6 +4,12 @@ Release history for App-DH
  [Dependencies::Stats]
  - Dependencies changed since 0.002000, see misc/*.deps* for details
  - develop: +1 -1 (suggests: ↑2)
+ - runtime: +1
+ - test: +4
+
+ [Features]
+ - Can now specify a target version with --target
+ - Thanks to Yanick Champoux #1
 
 0.002000 2015-03-08T09:13:15Z 2350202
  [Dependencies::Stats]

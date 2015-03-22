@@ -4,6 +4,15 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / develop requires]
  - Dist::Zilla::Plugin::MetaYAML::Minimal
 
+ [Added / runtime requires]
+ - PerlX::Maybe
+
+ [Added / test requires]
+ - DBI
+ - DBIx::Class::Core
+ - DBIx::Class::Schema
+ - base
+
  [Changed / develop suggests]
  - Dist::Zilla::App::Command::bakeini 0.002000 → 0.002005
  - Dist::Zilla::PluginBundle::Author::KENTNL 2.024001 → 2.024002

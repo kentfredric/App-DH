@@ -14,6 +14,7 @@ use Carp qw( croak );
 use DBIx::Class::DeploymentHandler;
 use Moose qw( with has around );
 use MooseX::Getopt 0.48 ();
+use PerlX::Maybe;
 
 with 'MooseX::Getopt';
 
@@ -146,6 +147,25 @@ has database => (
   documentation => 'SQL::Translator::Producer::* database backends to generate DDLs for',
 );
 
+=param --target
+
+    --target
+
+Specify which version to install/upgrade to.
+
+If not specified, defaults to the latest version.
+
+=cut
+
+has target => (
+  traits        => ['Getopt'],
+  isa           => 'Str',
+  is            => 'ro',
+  predicate     => 'has_target',
+  cmd_aliases   => 'v',
+  documentation => 'version to install/upgrade to',
+);
+
 has _dh     => ( is => 'ro', lazy => 1, builder => '_build__dh' );
 has _schema => ( is => 'ro', lazy => 1, builder => '_build__schema' );
 
@@ -166,6 +186,7 @@ sub _build__dh {
       force_overwrite  => $self->force,
       script_directory => $self->script_dir,
       databases        => $self->database,
+      maybe to_version => $self->target,
     },
   );
 }
@@ -234,7 +255,11 @@ Upgrade connection L</--connection_name>
 
 =cut
 
-sub cmd_upgrade { shift->_dh->upgrade; return }
+sub cmd_upgrade {
+  my $self = shift;
+  $self->_dh->upgrade;
+  return;
+}
 
 my (%cmds) = (
   write_ddl => \&cmd_write_ddl,

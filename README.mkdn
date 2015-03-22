@@ -139,6 +139,14 @@ Can be specified multiple times.
 
 Default is introspected from looking at whatever ["--connection\_name"](#connection_name) connects to.
 
+## --target
+
+    --target
+
+Specify which version to install/upgrade to.
+
+If not specified, defaults to the latest version.
+
 # CREDITS
 
 This module is mostly code by mst, sponsored by [nordaaker.com](http://nordaaker.com), and I've only tidied it up and made it
