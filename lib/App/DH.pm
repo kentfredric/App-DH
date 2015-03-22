@@ -146,6 +146,25 @@ has database => (
   documentation => 'SQL::Translator::Producer::* database backends to generate DDLs for',
 );
 
+=param --target
+
+    --target
+
+Specify which version to install/upgrade to.
+
+If not specified, defaults to the latest version. 
+
+=cut
+
+has target => (
+    traits          => ['Getopt'],
+    isa             => 'Str',
+    is              => 'ro',
+    predicate       => 'has_target',
+    cmd_aliases     => 'v',
+    documentation   => 'version to install/upgrade to',
+);
+
 has _dh     => ( is => 'ro', lazy => 1, builder => '_build__dh' );
 has _schema => ( is => 'ro', lazy => 1, builder => '_build__schema' );
 
@@ -222,7 +241,12 @@ Install to connection L</--connection_name>
 
 sub cmd_install {
   my $self = shift;
-  $self->_dh->install;
+  if ( $self->has_target ) {
+    $self->_dh->install({ version => $self->target });
+  }
+  else {
+    $self->_dh->install;
+  }
   return;
 }
 
@@ -234,7 +258,17 @@ Upgrade connection L</--connection_name>
 
 =cut
 
-sub cmd_upgrade { shift->_dh->upgrade; return }
+sub cmd_upgrade { 
+    my $self = shift;
+    if ( $self->has_target ) {
+        $self->_dh->upgrade({ to_version => $self->target }); 
+    }
+    else {
+        $self->_dh->upgrade; 
+    }
+    return
+}
+
 
 my (%cmds) = (
   write_ddl => \&cmd_write_ddl,
