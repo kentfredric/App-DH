@@ -14,6 +14,7 @@ use Carp qw( croak );
 use DBIx::Class::DeploymentHandler;
 use Moose qw( with has around );
 use MooseX::Getopt 0.48 ();
+use PerlX::Maybe;
 
 with 'MooseX::Getopt';
 
@@ -185,6 +186,7 @@ sub _build__dh {
       force_overwrite  => $self->force,
       script_directory => $self->script_dir,
       databases        => $self->database,
+      maybe to_version => $self->target,
     },
   );
 }
@@ -241,12 +243,7 @@ Install to connection L</--connection_name>
 
 sub cmd_install {
   my $self = shift;
-  if ( $self->has_target ) {
-    $self->_dh->install({ version => $self->target });
-  }
-  else {
-    $self->_dh->install;
-  }
+  $self->_dh->install;
   return;
 }
 
@@ -260,12 +257,7 @@ Upgrade connection L</--connection_name>
 
 sub cmd_upgrade { 
     my $self = shift;
-    if ( $self->has_target ) {
-        $self->_dh->upgrade({ to_version => $self->target }); 
-    }
-    else {
-        $self->_dh->upgrade; 
-    }
+    $self->_dh->upgrade; 
     return
 }
 
