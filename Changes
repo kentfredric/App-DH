@@ -1,6 +1,9 @@
 Release history for App-DH
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 0.002000, see misc/*.deps* for details
+ - develop: +1 -1 (suggests: ↑2)
 
 0.002000 2015-03-08T09:13:15Z 2350202
  [Dependencies::Stats]
