@@ -4,7 +4,7 @@ use warnings;
 
 package App::DH;
 
-our $VERSION = '0.002000';
+our $VERSION = '0.003000';
 
 # ABSTRACT: Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler
 
@@ -14,6 +14,7 @@ use Carp qw( croak );
 use DBIx::Class::DeploymentHandler;
 use Moose qw( with has around );
 use MooseX::Getopt 0.48 ();
+use PerlX::Maybe qw( maybe );
 
 with 'MooseX::Getopt';
 
@@ -146,6 +147,25 @@ has database => (
   documentation => 'SQL::Translator::Producer::* database backends to generate DDLs for',
 );
 
+
+
+
+
+
+
+
+
+
+
+has target => (
+  traits        => ['Getopt'],
+  isa           => 'Str',
+  is            => 'ro',
+  predicate     => 'has_target',
+  cmd_aliases   => 'v',
+  documentation => 'version to install/upgrade to',
+);
+
 has _dh     => ( is => 'ro', lazy => 1, builder => '_build__dh' );
 has _schema => ( is => 'ro', lazy => 1, builder => '_build__schema' );
 
@@ -166,6 +186,7 @@ sub _build__dh {
       force_overwrite  => $self->force,
       script_directory => $self->script_dir,
       databases        => $self->database,
+      maybe to_version => $self->target,
     },
   );
 }
@@ -234,7 +255,11 @@ sub cmd_install {
 
 
 
-sub cmd_upgrade { shift->_dh->upgrade; return }
+sub cmd_upgrade {
+  my $self = shift;
+  $self->_dh->upgrade;
+  return;
+}
 
 my (%cmds) = (
   write_ddl => \&cmd_write_ddl,
@@ -303,7 +328,7 @@ App::DH - Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::Deploy
 
 =head1 VERSION
 
-version 0.002000
+version 0.003000
 
 =head1 SYNOPSIS
 
@@ -437,6 +462,14 @@ Specify the C<SQL::Translator::Producer::*> backend to use for generating DDLs.
 Can be specified multiple times.
 
 Default is introspected from looking at whatever L</--connection_name> connects to.
+
+=head2 --target
+
+    --target
+
+Specify which version to install/upgrade to.
+
+If not specified, defaults to the latest version.
 
 =for Pod::Coverage     cmd_write_ddl
     cmd_install

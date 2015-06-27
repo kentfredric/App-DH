@@ -38,7 +38,7 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::MetaJSON' => '0',
                                       'Dist::Zilla::Plugin::MetaProvides::Package' => '1.14000001',
                                       'Dist::Zilla::Plugin::MetaTests' => '0',
-                                      'Dist::Zilla::Plugin::MetaYAML' => '0',
+                                      'Dist::Zilla::Plugin::MetaYAML::Minimal' => '0',
                                       'Dist::Zilla::Plugin::MinimumPerl' => '0',
                                       'Dist::Zilla::Plugin::PodCoverageTests' => '0',
                                       'Dist::Zilla::Plugin::PodSyntaxTests' => '0',
@@ -71,8 +71,8 @@ do { my $x = {
                                       'Test::Pod::Coverage' => '1.08'
                                     },
                       'suggests' => {
-                                      'Dist::Zilla::App::Command::bakeini' => '0.002000',
-                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.024001'
+                                      'Dist::Zilla::App::Command::bakeini' => '0.002005',
+                                      'Dist::Zilla::PluginBundle::Author::KENTNL' => '2.024002'
                                     }
                     },
        'runtime' => {
@@ -86,6 +86,7 @@ do { my $x = {
                                       'Module::Runtime' => '0',
                                       'Moose' => '0',
                                       'MooseX::Getopt' => '0.48',
+                                      'PerlX::Maybe' => '0',
                                       'lib' => '0',
                                       'perl' => '5.006',
                                       'strict' => '0',
@@ -95,13 +96,20 @@ do { my $x = {
        'test' => {
                    'recommends' => {
                                      'CPAN::Meta' => '2.120900',
+                                     'DBD::SQLite' => '0',
                                      'ExtUtils::MakeMaker' => '7.00',
                                      'Test::More' => '0.99'
                                    },
                    'requires' => {
+                                   'DBI' => '0',
+                                   'DBIx::Class::Core' => '0',
+                                   'DBIx::Class::Schema' => '0',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
                                    'Test::More' => '0.89',
+                                   'Test::Requires' => '0',
+                                   'Test::TempDir::Tiny' => '0',
+                                   'base' => '0',
                                    'perl' => '5.006'
                                  }
                  }

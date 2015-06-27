@@ -1,6 +1,10 @@
 This file contains changes in OPTIONAL dependencies for standard CPAN phases (configure/build/runtime/test)
 
-0.002000
+0.003000
+ [Added / test recommends]
+ - DBD::SQLite
+
+0.002000 2015-03-08T09:13:15Z
  [Added / configure recommends]
  - ExtUtils::MakeMaker 7.00
 
@@ -15,4 +19,3 @@ This file contains changes in OPTIONAL dependencies for standard CPAN phases (co
 0.001002 2013-04-07T22:12:52Z
 
 0.001001 2013-02-15T16:09:39Z
-

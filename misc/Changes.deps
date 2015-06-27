@@ -1,6 +1,18 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
-0.002000
+0.003000
+ [Added / runtime requires]
+ - PerlX::Maybe
+
+ [Added / test requires]
+ - DBI
+ - DBIx::Class::Core
+ - DBIx::Class::Schema
+ - Test::Requires
+ - Test::TempDir::Tiny
+ - base
+
+0.002000 2015-03-08T09:13:15Z
  [Added / configure requires]
  - ExtUtils::MakeMaker
  - perl 5.006
@@ -41,4 +53,3 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - MooseX::Getopt 0 → 0.48
 
 0.001001 2013-02-15T16:09:39Z
-
