@@ -1,12 +1,14 @@
 {
    "failures" : {
-      "DBIx::Class::DeploymentHandler" : "module was not found in INC",
-      "DBIx::Class::Schema::Config" : "module was not found in INC",
-      "MooseX::Getopt" : "module was not found in INC"
+      "DBIx::Class::Core" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.22.0/lib/site_perl/5.22.0/DBIx/Class/Core.pm",
+      "DBIx::Class::Schema" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.22.0/lib/site_perl/5.22.0/DBIx/Class/Schema.pm",
+      "DBIx::Class::Schema::Config" : "module was not found in INC"
    },
    "modules" : {
       "CPAN::Meta" : "2.150005",
       "Carp" : "1.36",
+      "DBI" : "1.633",
+      "DBIx::Class::DeploymentHandler" : "0.002216",
       "Dist::Zilla" : "5.037",
       "Dist::Zilla::App::Command::bakeini" : "0.002005",
       "Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes" : "0.004003",
@@ -61,6 +63,8 @@
       "File::Spec" : "3.56",
       "Module::Runtime" : "0.014",
       "Moose" : "2.1405",
+      "MooseX::Getopt" : "0.68",
+      "PerlX::Maybe" : "1.001",
       "Pod::Coverage::TrustPod" : "0.100003",
       "Test::CPAN::Changes" : "0.400002",
       "Test::CPAN::Meta" : "0.25",
@@ -69,6 +73,7 @@
       "Test::More" : "1.001014",
       "Test::Pod" : "1.50",
       "Test::Pod::Coverage" : "1.10",
+      "base" : "2.22",
       "lib" : "0.63",
       "strict" : "1.09",
       "warnings" : "1.32"

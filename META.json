@@ -102,6 +102,7 @@
             "Module::Runtime" : "0",
             "Moose" : "0",
             "MooseX::Getopt" : "0.48",
+            "PerlX::Maybe" : "0",
             "lib" : "0",
             "perl" : "5.006",
             "strict" : "0",
@@ -115,9 +116,13 @@
             "Test::More" : "0.99"
          },
          "requires" : {
+            "DBI" : "0",
+            "DBIx::Class::Core" : "0",
+            "DBIx::Class::Schema" : "0",
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
             "Test::More" : "0.89",
+            "base" : "0",
             "perl" : "5.006"
          }
       }
@@ -834,6 +839,9 @@
          "version" : "5.037"
       }
    },
-   "x_authority" : "cpan:MSTROUT"
+   "x_authority" : "cpan:MSTROUT",
+   "x_contributors" : [
+      "Yanick Champoux <yanick@babyl.dyndns.org>"
+   ]
 }
 
