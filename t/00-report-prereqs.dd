@@ -108,6 +108,7 @@ do { my $x = {
                                    'File::Spec' => '0',
                                    'Test::More' => '0.89',
                                    'Test::Requires' => '0',
+                                   'Test::TempDir::Tiny' => '0',
                                    'base' => '0',
                                    'perl' => '5.006'
                                  }

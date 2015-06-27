@@ -3,13 +3,13 @@ use warnings;
 
 use Test::More;
 use Test::Requires { 'DBD::SQLite' => 0 };
+use Test::TempDir::Tiny qw( tempdir );
 use DBI;
 
 use App::DH;
 
-my $db = 't/test.sqlite3';
-
-unlink $db if -f $db;
+my $d  = tempdir();
+my $db = "$d/test.sqlite3";
 
 my $dbh = DBI->connect( 'dbi:SQLite:' . $db );
 

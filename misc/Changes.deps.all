@@ -7,10 +7,14 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / runtime requires]
  - PerlX::Maybe
 
+ [Added / test recommends]
+ - DBD::SQLite
+
  [Added / test requires]
  - DBI
  - DBIx::Class::Core
  - DBIx::Class::Schema
+ - Test::Requires
  - base
 
  [Changed / develop suggests]
