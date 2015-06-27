@@ -9,6 +9,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - DBIx::Class::Core
  - DBIx::Class::Schema
  - Test::Requires
+ - Test::TempDir::Tiny
  - base
 
 0.002000 2015-03-08T09:13:15Z

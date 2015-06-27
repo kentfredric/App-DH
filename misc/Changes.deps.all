@@ -15,6 +15,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - DBIx::Class::Core
  - DBIx::Class::Schema
  - Test::Requires
+ - Test::TempDir::Tiny
  - base
 
  [Changed / develop suggests]
