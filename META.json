@@ -112,6 +112,7 @@
       "test" : {
          "recommends" : {
             "CPAN::Meta" : "2.120900",
+            "DBD::SQLite" : "0",
             "ExtUtils::MakeMaker" : "7.00",
             "Test::More" : "0.99"
          },
@@ -122,6 +123,7 @@
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
             "Test::More" : "0.89",
+            "Test::Requires" : "0",
             "base" : "0",
             "perl" : "5.006"
          }
@@ -783,6 +785,17 @@
                }
             },
             "name" : "recommend",
+            "version" : "5.037"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::Prereqs",
+            "config" : {
+               "Dist::Zilla::Plugin::Prereqs" : {
+                  "phase" : "test",
+                  "type" : "recommends"
+               }
+            },
+            "name" : "TestRecommends",
             "version" : "5.037"
          },
          {

@@ -1,6 +1,14 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 0.002001
+ [Added / runtime requires]
+ - PerlX::Maybe
+
+ [Added / test requires]
+ - DBI
+ - DBIx::Class::Core
+ - DBIx::Class::Schema
+ - base
 
 0.002000 2015-03-08T09:13:15Z
  [Added / configure requires]
