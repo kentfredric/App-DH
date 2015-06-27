@@ -133,7 +133,7 @@
    "provides" : {
       "App::DH" : {
          "file" : "lib/App/DH.pm",
-         "version" : "0.002001"
+         "version" : "0.003000"
       }
    },
    "release_status" : "stable",
@@ -148,7 +148,7 @@
          "web" : "https://github.com/kentnl/App-DH"
       }
    },
-   "version" : "0.002001",
+   "version" : "0.003000",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -621,7 +621,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.002001-source",
+                  "tag" : "0.003000-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -692,7 +692,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "0.002001",
+                  "tag" : "0.003000",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
