@@ -14,7 +14,7 @@ use Carp qw( croak );
 use DBIx::Class::DeploymentHandler;
 use Moose qw( with has around );
 use MooseX::Getopt 0.48 ();
-use PerlX::Maybe;
+use PerlX::Maybe qw( maybe );
 
 with 'MooseX::Getopt';
 
