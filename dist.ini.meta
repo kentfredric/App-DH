@@ -35,3 +35,6 @@ srcreadme         = mkdn
 -phase = runtime
 -relationship = recommends
 DBIx::Class::Schema::Config = 0
+
+[Prereqs / TestRecommends]
+DBD::SQLite = 0

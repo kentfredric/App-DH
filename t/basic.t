@@ -2,12 +2,10 @@ use strict;
 use warnings;
 
 use Test::More;
+use Test::Requires { 'DBD::SQLite' => 0 };
 use DBI;
 
 use App::DH;
-
-plan skip_all => "test needs DBD::SQLite"
-  unless eval "use DBD::SQLite; 1";
 
 my $db = 't/test.sqlite3';
 

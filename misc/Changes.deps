@@ -8,6 +8,7 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - DBI
  - DBIx::Class::Core
  - DBIx::Class::Schema
+ - Test::Requires
  - base
 
 0.002000 2015-03-08T09:13:15Z
