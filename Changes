@@ -1,6 +1,8 @@
 Release history for App-DH
 
 {{$NEXT}}
+
+0.004000 2016-10-08T05:23:17Z d3631d1
  [Commands]
  - New commands "database_version" and "schema_version" for inspecting relevant version fields.
  - Thanks to Daniel Böhmer for PR #2
