@@ -5,6 +5,8 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - JSON::PP 2.27300
 
  [Added / develop requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING 0.001003
+ - Dist::Zilla::Plugin::RemovePrereqs::Provided
  - English
  - Software::License::Perl_5
 
