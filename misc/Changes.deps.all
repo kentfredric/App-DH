@@ -1,6 +1,22 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
-0.003000
+0.004000
+ [Added / configure suggests]
+ - JSON::PP 2.27300
+
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING 0.001003
+ - Dist::Zilla::Plugin::RemovePrereqs::Provided
+ - English
+ - Software::License::Perl_5
+
+ [Changed / develop requires]
+ - Test::More 0.88 → 0.96
+
+ [Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.024002 → 2.025020
+
+0.003000 2015-06-27T04:31:29Z
  [Added / develop requires]
  - Dist::Zilla::Plugin::MetaYAML::Minimal
 
