@@ -76,6 +76,16 @@ Upgrade connection ["--connection\_name"](#connection_name)
 
     dh.pl [...params] upgrade
 
+## database\_version
+
+Report database\_version of ["--connection"](#connection)
+
+## schema\_version
+
+Report schema\_version of ["--schema"](#schema)
+
+    dh.pl [...params] schema_version
+
 # PARAMETERS
 
 ## --connection\_name
