@@ -4,7 +4,7 @@ use warnings;
 
 package App::DH;
 
-our $VERSION = '0.003001';
+our $VERSION = '0.004000';
 
 # ABSTRACT: Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::DeploymentHandler
 
