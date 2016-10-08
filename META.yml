@@ -27,7 +27,7 @@ name: App-DH
 provides:
   App::DH:
     file: lib/App/DH.pm
-    version: '0.003001'
+    version: '0.004000'
 recommends:
   DBIx::Class::Schema::Config: '0'
   Moose: '2.000'
@@ -46,4 +46,4 @@ resources:
   bugtracker: https://github.com/kentnl/App-DH/issues
   homepage: https://github.com/kentnl/App-DH
   repository: https://github.com/kentnl/App-DH.git
-version: '0.003001'
+version: '0.004000'
