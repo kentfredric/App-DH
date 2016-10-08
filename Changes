@@ -1,5 +1,7 @@
 Release history for App-DH
 
+0.004001 2016-10-08T06:05:05Z 0c9b73d
+
 0.004000 2016-10-08T05:23:17Z d3631d1
  [Commands]
  - New commands "database_version" and "schema_version" for inspecting relevant version fields.
