@@ -1,6 +1,9 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 0.003001
+ [Added / configure suggests]
+ - JSON::PP 2.27300
+
  [Added / develop requires]
  - English
  - Software::License::Perl_5

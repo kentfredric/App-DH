@@ -261,20 +261,58 @@ sub cmd_upgrade {
   return;
 }
 
+
+
+
+
+
+
+sub cmd_database_version {
+    my $self = shift;
+
+  ## no critic (RequireCheckedSyscalls)
+  print $self->_dh->database_version . "\n";
+
+  return;
+}
+
+
+
+
+
+
+
+
+
+sub cmd_schema_version {
+  my $self = shift;
+
+  ## no critic (RequireCheckedSyscalls)
+  print $self->_dh->schema_version . "\n";
+
+  return;
+}
+
 my (%cmds) = (
-  write_ddl => \&cmd_write_ddl,
-  install   => \&cmd_install,
-  upgrade   => \&cmd_upgrade,
+  write_ddl        => \&cmd_write_ddl,
+  install          => \&cmd_install,
+  upgrade          => \&cmd_upgrade,
+  database_version => \&cmd_database_version,
+  schema_version   => \&cmd_schema_version,
 );
 my (%cmd_desc) = (
-  write_ddl => 'only write ddl files',
-  install   => 'install to the specified database connection',
-  upgrade   => 'upgrade the specified database connection',
+  write_ddl        => 'only write ddl files',
+  install          => 'install to the specified database connection',
+  upgrade          => 'upgrade the specified database connection',
+  database_version => 'report the version of the specified database connection',
+  schema_version   => 'report the version of the schema class',
 );
 my $list_cmds = join q[ ], sort keys %cmds;
 my $list_cmds_opt = '(' . ( join q{|}, sort keys %cmds ) . ')';
 my $list_cmds_usage =
   ( join qq{\n}, q{}, qq{\tcommands:}, q{}, ( map { ( sprintf qq{\t%-30s%s}, $_, $cmd_desc{$_} ) } sort keys %cmds ), q{} );
+
+
 
 
 
@@ -400,6 +438,16 @@ Upgrade connection L</--connection_name>
 
     dh.pl [...params] upgrade
 
+=head2 database_version
+
+Report database_version of L</--connection>
+
+=head2 schema_version
+
+Report schema_version of L</--schema>
+
+    dh.pl [...params] schema_version
+
 =head1 PARAMETERS
 
 =head2 --connection_name
@@ -474,6 +522,8 @@ If not specified, defaults to the latest version.
 =for Pod::Coverage     cmd_write_ddl
     cmd_install
     cmd_upgrade
+    cmd_database_version
+    cmd_schema_version
     run
 
 =head1 CREDITS

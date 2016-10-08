@@ -22,6 +22,9 @@
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
             "perl" : "5.006"
+         },
+         "suggests" : {
+            "JSON::PP" : "2.27300"
          }
       },
       "develop" : {
@@ -917,6 +920,7 @@
    },
    "x_authority" : "cpan:MSTROUT",
    "x_contributors" : [
+      "Daniel B\u00f6hmer <dboehmer@cpan.org>",
       "Yanick Champoux <yanick@babyl.dyndns.org>"
    ],
    "x_serialization_backend" : "Cpanel::JSON::XS version 3.0217"
