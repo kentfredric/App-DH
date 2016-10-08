@@ -1,6 +1,6 @@
 Release history for App-DH
 
-0.004000 2016-10-08T05:22:35Z 051b31c
+0.004000 2016-10-08T05:23:17Z d3631d1
  [Commands]
  - New commands "database_version" and "schema_version" for inspecting relevant version fields.
  - Thanks to Daniel Böhmer for PR #2
@@ -8,7 +8,7 @@ Release history for App-DH
  [Dependencies::Stats]
  - Dependencies changed since 0.003000, see misc/*.deps* for details
  - configure: (suggests: +1)
- - develop: +2 ↑1 (suggests: ↑1)
+ - develop: +4 ↑1 (suggests: ↑1)
 
 0.003000 2015-06-27T04:31:29Z 3f38f2a
  [Dependencies::Stats]

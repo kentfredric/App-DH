@@ -2,6 +2,8 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
 
 0.004000
  [Added / develop requires]
+ - Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING 0.001003
+ - Dist::Zilla::Plugin::RemovePrereqs::Provided
  - English
  - Software::License::Perl_5
 
