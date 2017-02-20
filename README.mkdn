@@ -4,7 +4,7 @@ App::DH - Deploy your DBIx::Class Schema to DDL/Database via DBIx::Class::Deploy
 
 # VERSION
 
-version 0.004001
+version 0.004900
 
 # SYNOPSIS
 
