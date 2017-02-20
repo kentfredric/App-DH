@@ -173,7 +173,7 @@ The authoring of the initial incarnation of this code is kindly sponsored by [no
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2016 by The App::DH Authors, Contributors, and Sponsors.
+This software is copyright (c) 2017 by The App::DH Authors, Contributors, and Sponsors.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
