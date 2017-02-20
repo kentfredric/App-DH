@@ -1,6 +1,9 @@
 Release history for App-DH
 
-0.004001 2016-10-08T06:05:05Z 0c9b73d
+0.004001 2017-02-20T00:16:09Z 32b5a9e
+ [Dependencies::Stats]
+ - Dependencies changed since 0.004000, see misc/*.deps* for details
+ - develop: +1
 
 0.004000 2016-10-08T05:23:17Z d3631d1
  [Commands]

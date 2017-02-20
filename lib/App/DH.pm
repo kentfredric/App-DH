@@ -551,7 +551,7 @@ mst - Matt S. Trout (cpan:MSTROUT) <mst@shadowcat.co.uk>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2016 by The App::DH Authors, Contributors, and Sponsors.
+This software is copyright (c) 2017 by The App::DH Authors, Contributors, and Sponsors.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
